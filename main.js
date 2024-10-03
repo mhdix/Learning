@@ -18,7 +18,7 @@ const couponLimit = 20;
 // console.log(couponUsage < couponLimit && isActive ? 'you can usage coupon' : 'cant usage coupon' )
 
 //? 1403/7/11
-// start: 20, end: 22
+// start: 20, end: 25
 
 //! switch - case :
 // const role = ""; // ADMIN | MERCHENT | TEACHER
@@ -41,11 +41,21 @@ const couponLimit = 20;
 //   }
 // }
 
+//! while
+
+// let i = 0
+// while (i <= 10){
+//     if(i % 4 === 0) console.log('the even', i);
+//     i++
+// }
+
+
+
 //! for
-let i = 10;
-for (i; i >= 0; i--) {
-  // if (i % 2 === 0 ) console.log('the even number is ', i);
-}
+// let i = 10;
+// for (i; i >= 0; i--) {
+//   // if (i % 2 === 0 ) console.log('the even number is ', i);
+// }
 // console.log(i)
 
 //! for(in)
@@ -63,6 +73,78 @@ for (const key in user) {
 const roles = ['ADMIN', 'TEACHER', 'MERCHANT']
 
 for (const item of roles) {
-    console.log(item)
+    // console.log(item)
 }
-console.log(roles[0]);
+// console.log(roles[0]);
+
+//! breack - continue
+let i = 0;
+for (i ; i < 0 ; i ++) {
+
+}
+
+
+//? 1403/7/12
+// start: 26, end: 
+
+//! function 
+// function sayHello (name = '...')  {
+//   console.log('salam ' + name + ' khubi ?')
+// }
+
+// sayHello('mahdi')
+
+// function calculateArea (radius) {
+//   const area = 3.14 * radius ** 2
+//   console.log('the circle area is equal to : ' + area)
+// }
+// calculateArea (50000)
+
+//! RETURN IN FUNCTION
+function msgRole (role) {
+  if(role === 'TEACHER') return 'hello teacher role'
+  if(role === "MERCHANT") return 'hello merchant role'
+  return 'hello unknown user'
+}
+// const rolse = msgRole("TEACHER");
+// console.log(rolse)
+
+// function getUserRole (role) {
+//   if (role === "admin") {
+//     return "hello admin"
+//   } if (role === "teacher") {
+//     return "hello teacher"
+//   }
+//   return 'unknown user role'
+// }
+
+// console.log(getUserRole ('admin'))
+
+// function getUserRole (role) {
+//   switch (role) {
+//     case 'admin':{
+//        return 'hello admin';
+//       }
+      
+//     case 'teacher':{
+//       return 'hello teacher';
+//     }
+    
+//     default:
+//       return 'hello unknown user';
+//   }
+// }
+
+// console.log(getUserRole('admind'))
+
+//! max number challenge
+
+function maxNumber(a, b) {
+  if (a > b) {
+    return a 
+  }else {
+    return b
+  }
+}
+
+console.log(first)
