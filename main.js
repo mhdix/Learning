@@ -84,6 +84,9 @@ for (i ; i < 0 ; i ++) {
 }
 
 
+
+
+
 //? 1403/7/12
 // start: 26, end: 
 
@@ -139,12 +142,24 @@ function msgRole (role) {
 
 //! max number challenge
 
-function maxNumber(a, b) {
-  if (a > b) {
-    return a 
-  }else {
-    return b
-  }
-}
+// function maxNumber(a, b) {
+//   if (a > b) return "a", a;
+//   return "b", b;
+// }
+// function maxNumber(a, b) {
+//   return a > b ? a : b
+// }
 
-console.log(first)
+// console.log(maxNumber(10, 15))
+
+
+//! FizzzBuzz challenge
+
+// function FizzzBuzz (number) {
+//   if (number % 3 === 0 & number % 5 === 0) return 'FizzBuzz'
+//   if (number % 3 === 0) return "fiz";
+//   if (number % 5 === 0) return "buzz"; 
+//   const typeOf = typeof number
+//   return typeOf == "number" ? "not valid number !" : "not a number";
+// }
+// console.log(FizzzBuzz(4))
