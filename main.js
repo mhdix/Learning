@@ -164,11 +164,13 @@
 // }
 // console.log(FizzzBuzz(4))
 
+
 //? 1403/07/13
-// start: 30, end: 30, repeat: 30
+//? start: 30, end: 30, repeat: 30
+
 
 //? 1403/07/14
-// start: 30, end: 
+//? start: 30, end: 37
 
 // const course = {
 //   title: 'react.js',
@@ -263,21 +265,33 @@
 
 
 //? primitive VS refrence data type
-
 //! refrence type
-const name = 'mahdi'
-let copiedName = name
-copiedName = 'mostaf'
+// const name = 'mahdi'
+// let copiedName = name
+// copiedName = 'mostaf'
 // console.log(name);
 // console.log(copiedName);
 
 //! primitive type
-const user = {
-  name: 'mahdi',
-  age: 20
-}
-const copiedUser = JSON.parse(JSON.stringify(user))
+// const user = {
+//   name: 'mahdi',
+//   age: 20
+// }
+// const copiedUser = JSON.parse(JSON.stringify(user))
 
-copiedUser.name = 'asqar'
-console.log(user.name);
-console.log(copiedUser.name);
+// copiedUser.name = 'asqar'
+// console.log(user.name);
+// console.log(copiedUser.name);
+
+//? Object destructuring
+// const course = {
+//   title: 'next',
+//   price: 100,
+//   discount: 10,
+//   showMsg({name, email, phoneNo}) {
+//     console.log('hi ' + name + ' your Email is ' + email + ' and phone number is ' + phoneNo)
+//   }
+// } 
+
+// const {showMsg, discount} = course
+// console.log(showMsg({name: 'mahdi' , email: 'x@email.com', phoneNo: '09925438078'}))
