@@ -209,16 +209,35 @@
 
 //? constructor function
 
-function CreateCourse (title, price, discount) {
+// function CreateCourse (title, price, discount) {
+//   this.title = title;
+//   this.price = price;
+//   this.discount = discount;
+//   this.calcOffPrice = function () {
+//     return price * (1 - discount / 100)
+//   }
+// }
+// const course1 = new CreateCourse("Next", 200, 10);
+// console.log(course1.calcOffPrice());
+
+// const course2 = new CreateCourse("React", 150, 8);
+// console.log(course2.calcOffPrice());
+
+
+//? built-in constructor function
+
+const strObj = new String("string built-in js");
+console.log(strObj, typeof strObj)
+function CreateCourse(title, price, discount) {
   this.title = title;
   this.price = price;
   this.discount = discount;
   this.calcOffPrice = function () {
-    return price * (1 - discount / 100)
-  }
+    return price * (1 - discount / 100);
+  };
 }
 const course1 = new CreateCourse("Next", 200, 10);
-console.log(course1.calcOffPrice());
 
-const course2 = new CreateCourse("React", 150, 8);
-console.log(course2.calcOffPrice());
+console.log(course1.constructor);
+console.log(course1.calcOffPrice());
+console.log(course1 instanceof CreateCourse);
