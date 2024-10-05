@@ -192,17 +192,33 @@
 //! constructor - factory : function
 
 //? factory function 
-function createCourse (title, price, discount) {
-  return {
-    title,
-    price,
-    discount,
-    calcOffPrice() {
-      return price * (1 - discount / 100)
-    }
+// function createCourse (title, price, discount) {
+//   return {
+//     title,
+//     price,
+//     discount,
+//     calcOffPrice() {
+//       return price * (1 - discount / 100)
+//     }
+//   }
+// }
+// console.log(createCourse("next", 200, 10).calcOffPrice());
+// console.log(createCourse("next", 300, 20).calcOffPrice());
+// console.log(createCourse("next", 400, 5).calcOffPrice());
+
+
+//? constructor function
+
+function CreateCourse (title, price, discount) {
+  this.title = title;
+  this.price = price;
+  this.discount = discount;
+  this.calcOffPrice = function () {
+    return price * (1 - discount / 100)
   }
 }
+const course1 = new CreateCourse("Next", 200, 10);
+console.log(course1.calcOffPrice());
 
-console.log(createCourse("next", 200, 10).calcOffPrice());
-console.log(createCourse("next", 300, 20).calcOffPrice());
-console.log(createCourse("next", 400, 5).calcOffPrice());
+const course2 = new CreateCourse("React", 150, 8);
+console.log(course2.calcOffPrice());
