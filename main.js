@@ -168,4 +168,23 @@ function msgRole (role) {
 // start: 30, end: 30, repeat: 30
 
 //? 1403/07/14
-// start: 30, end: 31
+// start: 30, end: 
+
+const course = {
+  title: 'react.js',
+  price: 200,
+  discount: 10,
+  stusent: ['mahdi', 'ali', 'mosi'],
+  isFree: true,
+  category: {
+      id: 1,
+      englishTitle: 'frontend',
+      title: 'Front-end',
+    },
+    calcOffPrice: function () {
+      this.offPrice = this.price * (1- this.discount / 100);
+      return this.offPrice;
+    }
+}
+console.log(course.calcOffPrice())
+console.log(course.offPrice);
