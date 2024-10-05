@@ -3,17 +3,17 @@
 // console.log(user.name)
 // console.log('4' * '3' )
 
-const totalPrice = 220_000;
-const dicountLimit = 200_000;
+// const totalPrice = 220_000;
+// const dicountLimit = 200_000;
 
 // console.log(totalPrice > dicountLimit ? '10' : '5');
 
 //? Coupon Limit
 // logical operators 15
 
-const isActive = false;
-const couponUsage = 10;
-const couponLimit = 20;
+// const isActive = false;
+// const couponUsage = 10;
+// const couponLimit = 20;
 
 // console.log(couponUsage < couponLimit && isActive ? 'you can usage coupon' : 'cant usage coupon' )
 
@@ -59,29 +59,29 @@ const couponLimit = 20;
 // console.log(i)
 
 //! for(in)
-const user = {
-  name: "mahdi",
-  email: "test@test.com",
-  phoneNumber: "0992543808",
-};
+// const user = {
+//   name: "mahdi",
+//   email: "test@test.com",
+//   phoneNumber: "0992543808",
+// };
 
-for (const key in user) {
+// for (const key in user) {
 //   console.log(user[key]);
-}
+// }
 
 //! for(of)
-const roles = ['ADMIN', 'TEACHER', 'MERCHANT']
+// const roles = ['ADMIN', 'TEACHER', 'MERCHANT']
 
-for (const item of roles) {
+// for (const item of roles) {
     // console.log(item)
-}
+// }
 // console.log(roles[0]);
 
 //! breack - continue
-let i = 0;
-for (i ; i < 0 ; i ++) {
+// let i = 0;
+// for (i ; i < 0 ; i ++) {
 
-}
+// }
 
 
 
@@ -104,11 +104,11 @@ for (i ; i < 0 ; i ++) {
 // calculateArea (50000)
 
 //! RETURN IN FUNCTION
-function msgRole (role) {
-  if(role === 'TEACHER') return 'hello teacher role'
-  if(role === "MERCHANT") return 'hello merchant role'
-  return 'hello unknown user'
-}
+// function msgRole (role) {
+//   if(role === 'TEACHER') return 'hello teacher role'
+//   if(role === "MERCHANT") return 'hello merchant role'
+//   return 'hello unknown user'
+// }
 // const rolse = msgRole("TEACHER");
 // console.log(rolse)
 
@@ -170,21 +170,39 @@ function msgRole (role) {
 //? 1403/07/14
 // start: 30, end: 
 
-const course = {
-  title: 'react.js',
-  price: 200,
-  discount: 10,
-  stusent: ['mahdi', 'ali', 'mosi'],
-  isFree: true,
-  category: {
-      id: 1,
-      englishTitle: 'frontend',
-      title: 'Front-end',
-    },
-    calcOffPrice: function () {
-      this.offPrice = this.price * (1- this.discount / 100);
-      return this.offPrice;
+// const course = {
+//   title: 'react.js',
+//   price: 200,
+//   discount: 10,
+//   stusent: ['mahdi', 'ali', 'mosi'],
+//   isFree: true,
+//   category: {
+//       id: 1,
+//       englishTitle: 'frontend',
+//       title: 'Front-end',
+//     },
+//     calcOffPrice: function () {
+//       this.offPrice = this.price * (1- this.discount / 100);
+//       return this.offPrice;
+//     }
+// }
+// console.log(course.calcOffPrice())
+// console.log(course.offPrice);
+
+//! constructor - factory : function
+
+//? factory function 
+function createCourse (title, price, discount) {
+  return {
+    title,
+    price,
+    discount,
+    calcOffPrice() {
+      return price * (1 - discount / 100)
     }
+  }
 }
-console.log(course.calcOffPrice())
-console.log(course.offPrice);
+
+console.log(createCourse("next", 200, 10).calcOffPrice());
+console.log(createCourse("next", 300, 20).calcOffPrice());
+console.log(createCourse("next", 400, 5).calcOffPrice());
