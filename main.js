@@ -259,4 +259,25 @@
 // //! get kys or valus has Object (min 4, 36) 
 // console.log(Object.keys(course1)); //! Array Res
 // console.log(Object.values(course1)); //! Array Res
-// console.log(Object.entries(course1)); //! get ky OR val Array Res
+// console.log(Object.entries(course1)); //! get ky OR val Array Res.
+
+
+//? primitive VS refrence data type
+
+//! refrence type
+const name = 'mahdi'
+let copiedName = name
+copiedName = 'mostaf'
+// console.log(name);
+// console.log(copiedName);
+
+//! primitive type
+const user = {
+  name: 'mahdi',
+  age: 20
+}
+const copiedUser = JSON.parse(JSON.stringify(user))
+
+copiedUser.name = 'asqar'
+console.log(user.name);
+console.log(copiedUser.name);
