@@ -225,19 +225,38 @@
 
 
 //? built-in constructor function
+// const strObj = new String("string built-in js");
+// console.log(strObj, typeof strObj)
+// function CreateCourse(title, price, discount) {
+//   this.title = title;
+//   this.price = price;
+//   this.discount = discount;
+//   this.calcOffPrice = function () {
+//     return price * (1 - discount / 100);
+//   };
+// }
+// const course1 = new CreateCourse("Next", 200, 10);
 
-const strObj = new String("string built-in js");
-console.log(strObj, typeof strObj)
-function CreateCourse(title, price, discount) {
-  this.title = title;
-  this.price = price;
-  this.discount = discount;
-  this.calcOffPrice = function () {
-    return price * (1 - discount / 100);
-  };
-}
-const course1 = new CreateCourse("Next", 200, 10);
+// console.log(course1.constructor);
+// console.log(course1.calcOffPrice());
+// console.log(course1 instanceof CreateCourse);
 
-console.log(course1.constructor);
-console.log(course1.calcOffPrice());
-console.log(course1 instanceof CreateCourse);
+//? dynamic nature of object
+// function CreateCourse(title, price, discount) {
+//   this.title = title;
+//   this.price = price;
+//   this.discount = discount;
+//   this.calcOffPrice = function () {
+//     return price * (1 - discount / 100);
+//   };
+// }
+// const course1 = new CreateCourse("Next", 200, 10);
+// course1.student = 230 //! add a property to obj
+// delete course1.title //! delete property of obj
+// console.log(course1.hasOwnProperty('price')) //! we can see obj has a this property
+// console.log(course1)
+
+// //! get kys or valus has Object (min 4, 36) 
+// console.log(Object.keys(course1)); //! Array Res
+// console.log(Object.values(course1)); //! Array Res
+// console.log(Object.entries(course1)); //! get ky OR val Array Res
