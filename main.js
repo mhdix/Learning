@@ -88,7 +88,7 @@ for (i ; i < 0 ; i ++) {
 
 
 //? 1403/7/12
-// start: 26, end: 
+// start: 26, end: 29
 
 //! function 
 // function sayHello (name = '...')  {
@@ -163,3 +163,9 @@ function msgRole (role) {
 //   return typeOf == "number" ? "not valid number !" : "not a number";
 // }
 // console.log(FizzzBuzz(4))
+
+//? 1403/07/13
+// start: 30, end: 30, repeat: 30
+
+//? 1403/07/14
+// start: 30, end: 31
