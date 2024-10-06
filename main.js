@@ -299,7 +299,7 @@
 
 
 //? 1403/7/15
-//? start: 39, end: 
+//? start: 39, end: 40
 
 
 //? template literal
@@ -333,3 +333,53 @@
 // const numes2 = [1, 2, [3, 4]];
 // const [a2, b2, [c2, d2]] = numes2;
 // console.log(c2);
+
+
+//? spread operators : ...
+//! 1. add some data to the end
+// const arr = [3, 4]
+// const arr2 = [1,2, ...arr]
+// console.log(arr2)
+
+//! 2. pass all array index as arguments : 
+// const arr = [1,2,3,4,5,6,7]
+// console.log(arr); //! Res : [1,2,3,4,5,6,7]
+// console.log(...arr); //! Res : 1 2 3 4 5 6 7
+
+//! 3. push items to array
+// const tags = ['front-end', 'backend', 'web developer']
+// const newTags = [...tags, 'Full Stack']
+// console.log(tags) //! front-end backend web developer
+// console.log(newTags) //! front-end backend web developer Full Stack
+
+//! 4. copy
+// const tags = ["front-end", "backend", "web developer"];
+// const copyTags = [...tags] //! shallow copy
+
+//! 5. join array
+// const bakendTags = ['node.js', 'nest.js']
+// console.log([...tags, ...bakendTags])
+// console.log(bakendTags)
+
+//! string : 
+//! 1. add character to string
+// const str = 'mahdi'
+// console.log([...str , "d"])
+
+//! 2. pass to function
+// console.log(...str)
+
+//! object : 
+// const user = {
+//     name: 'mahdi',
+//     id: 1
+// } 
+
+//! 1. add key value to object
+// console.log({...user, email: 'user@gmail.com'})
+// console.log(user)
+
+//! 2. copy ==> clone 1. Object.assign()
+// const newUser = { ...user }
+// newUser.email = 'user@gmail.com'
+// console.log(user, newUser)
