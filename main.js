@@ -170,7 +170,7 @@
 
 
 //? 1403/07/14
-//? start: 30, end: 37
+//? start: 30, end: 38
 
 // const course = {
 //   title: 'react.js',
@@ -295,3 +295,24 @@
 
 // const {showMsg, discount} = course
 // console.log(showMsg({name: 'mahdi' , email: 'x@email.com', phoneNo: '09925438078'}))
+
+
+
+//? 1403/7/15
+//? start: 39, end: 
+
+
+//? template literal
+const course = {
+  title: 'next',
+  price: 100,
+  discount: 10,
+  showMsg({name, email = '-' , phoneNo = '-'}) {
+    console.log(`hi ${name} your Email is ${email} and phone number is ${phoneNo}`)
+  }
+} 
+course.showMsg({
+    name: 'mahdi'
+    ,email: 'EX@gmail.com'
+    ,phoneNo: 35321
+})
