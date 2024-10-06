@@ -303,16 +303,33 @@
 
 
 //? template literal
-const course = {
-  title: 'next',
-  price: 100,
-  discount: 10,
-  showMsg({name, email = '-' , phoneNo = '-'}) {
-    console.log(`hi ${name} your Email is ${email} and phone number is ${phoneNo}`)
-  }
-} 
-course.showMsg({
-    name: 'mahdi'
-    ,email: 'EX@gmail.com'
-    ,phoneNo: 35321
-})
+// const course = {
+//   title: 'next',
+//   price: 100,
+//   discount: 10,
+//   showMsg({name, email = '-' , phoneNo = '-'}) {
+//     console.log(`hi ${name} your Email is ${email} and phone number is ${phoneNo}`)
+//   }
+// } 
+// course.showMsg({
+//     name: 'mahdi'
+//     ,email: 'EX@gmail.com'
+//     ,phoneNo: 35321
+// })
+
+
+
+//? array destructuring
+// const numes = [1, 2, 3]
+// const [a, ,c] = numes
+// console.log(c)
+
+//! default val 
+// const numes1 = [1, 2, 3];
+// const [a1, b1, c1, d1 = 4] = numes1;
+// console.log(d1);
+
+//! nested array
+// const numes2 = [1, 2, [3, 4]];
+// const [a2, b2, [c2, d2]] = numes2;
+// console.log(c2);
