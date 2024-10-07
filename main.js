@@ -471,31 +471,68 @@
 
 //? map data structure
 //!  Map : ==> object and keys, value ; key:number, ...
-const user = new Map()
+// const user = new Map()
 
 //! set : return updated map and add key value
-console.log(user.set('id', 1))
+// console.log(user.set('id', 1))
 
 //! chane set
-const numbeInSet = [1,2]
-user.set (true , 'ok').set('name', 'mahdi').set(numbeInSet, 'mahdi&mmdtaher')
-console.log(user);
+// const numbeInSet = [1,2]
+// user.set (true , 'ok').set('name', 'mahdi').set(numbeInSet, 'mahdi&mmdtaher')
+// console.log(user);
 
 //! size
-console.log(user.size)
+// console.log(user.size)
 
 //! delete
-console.log(user.delete('name'))
-console.log(user)
+// console.log(user.delete('name'))
+// console.log(user)
 
 //! check exist
-console.log(user.has("name"));
-console.log(user.has(numbeInSet));
+// console.log(user.has("name"));
+// console.log(user.has(numbeInSet));
 
 //! get data
-const getDataMap = user.get("id");
-console.log(getDataMap)
+// const getDataMap = user.get("id");
+// console.log(getDataMap)
 
 //! clear 
-user.clear()
-console.log(user)
+// user.clear()
+// console.log(user)
+
+
+//? an example of map data type
+const john = { name: "john Doe" };
+lily = {name: 'lily Doe'}
+peter = {name: 'peter pit'}
+
+const userRole = new Map([
+  [john, "admin"],
+  [lily, "editor"],
+  [peter, "subscriber"],
+]);
+
+console.log(userRole.get(john))
+
+//! loop on item keys name
+// for(const item of userRole.keys()) {
+//     console.log(item.name)
+// }
+
+//! loop in item values role
+// for(const roles of userRole.values()) {
+//     console.log(roles)
+// }
+
+//! loop on all item
+// for(const items of userRole.entries()) {
+//     console.log(items[0].name, ' - ', items[1])
+// }
+//* easier
+// for (const [user, role] of userRole.entries()) {
+//   console.log(user.name, " - ", role);
+// }
+
+//! convert map keys or values to array
+// console.log([...userRole.keys()]) //! convert map keys to array
+// console.log([...userRole.values()]) //! convert map values to array
