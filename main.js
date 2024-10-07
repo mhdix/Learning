@@ -407,63 +407,95 @@
 // console.log(otherUserData);
 
 //? rest operator in function
-function totalInRest (...args) {
-    let total = 0
-    for(const item of args) total += item
-    console.log(total)
-}
-totalInRest (1,2,8,368,7,6,5)
+// function totalInRest (...args) {
+//     let total = 0
+//     for(const item of args) total += item
+//     console.log(total)
+// }
+// totalInRest (1,2,8,368,7,6,5)
 //! task
-function discount (discount, ...price) {
-    let total = 0
-    for (const item of price) total += item
-    const result = (total * (1 - discount))
-    console.log(total) 
-    console.log(result);
-    console.log(Math.floor(result));
-}
-discount(0.3, 1, 2, 4, 4, 5, 5, 77);
+// function discount (discount, ...price) {
+//     let total = 0
+//     for (const item of price) total += item
+//     const result = (total * (1 - discount))
+//     console.log(total) 
+//     console.log(result);
+//     console.log(Math.floor(result));
+// }
+// discount(0.3, 1, 2, 4, 4, 5, 5, 77);
 
 //? set data structure
 
 //* Set: iterable data ==> array, string
-const set = new Set([1,2,3,4,5,6])
-console.log(set)
+// const set = new Set([1,2,3,4,5,6])
+// console.log(set)
 
 //! size 
-console.log(set.size)
+// console.log(set.size)
 
 //! 2. check => has
-console.log(set.has(2))
+// console.log(set.has(2))
 
 //! 3. add
-set.add(10)
-console.log(set)
+// set.add(10)
+// console.log(set)
 
 //! 4. delete 
-console.log(set.delete(4))
-console.log(set)
+// console.log(set.delete(4))
+// console.log(set)
 
 //! 5. not get value in set
 
 //! 6. clear
-set.clear()
-console.log(set)
+// set.clear()
+// console.log(set)
 
 //! 7. loop
-for (let item of set) {
-    console.log('in loop')
-}
+// for (let item of set) {
+//     console.log('in loop')
+// }
 
 //! use case :
-const roles = ['admin', 'admin', 'teacher' , 'teacher', 'editor']
-const uniqueRoles = new Set(roles)
-console.log([...uniqueRoles]) //! new arr
+// const roles = ['admin', 'admin', 'teacher' , 'teacher', 'editor']
+// const uniqueRoles = new Set(roles)
+// console.log([...uniqueRoles]) //! new arr
 //* how many unique role ?
-console.log(new Set(roles).size)
+// console.log(new Set(roles).size)
 //* best practice new arr 
-console.log([...new Set(roles)]) 
+// console.log([...new Set(roles)]) 
 
 //! convert array string, to uniq string 
-const userName1 = 'mahdiii domanloo'
-console.log([...new Set(userName1)].join(""));
+// const userName1 = 'mahdiii domanloo'
+// console.log([...new Set(userName1)].join(""));
+
+
+//? map data structure
+//!  Map : ==> object and keys, value ; key:number, ...
+const user = new Map()
+
+//! set : return updated map and add key value
+console.log(user.set('id', 1))
+
+//! chane set
+const numbeInSet = [1,2]
+user.set (true , 'ok').set('name', 'mahdi').set(numbeInSet, 'mahdi&mmdtaher')
+console.log(user);
+
+//! size
+console.log(user.size)
+
+//! delete
+console.log(user.delete('name'))
+console.log(user)
+
+//! check exist
+console.log(user.has("name"));
+console.log(user.has(numbeInSet));
+
+//! get data
+const getDataMap = user.get("id");
+console.log(getDataMap)
+
+//! clear 
+user.clear()
+console.log(user)
