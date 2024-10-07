@@ -391,17 +391,35 @@
 
 //? rest operator
 //! array
-const tags1 = ['react.js', 'vue.js']
-const tags2 = ['next.js', 'nuxt.js']
-const [reactTag, ...other] = [...tags1, ...tags2];
-console.log(other)
+// const tags1 = ['react.js', 'vue.js']
+// const tags2 = ['next.js', 'nuxt.js']
+// const [reactTag, ...other] = [...tags1, ...tags2];
+// console.log(other)
 //! object
-const user = {
-    id: 1,
-    name: 'mahdi',
-    email: 'm@gmail.com',
-    phone: '09900',
-} 
-const { id, email, ...otherUserData} = user
-console.log(email);
-console.log(otherUserData);
+// const user = {
+//     id: 1,
+//     name: 'mahdi',
+//     email: 'm@gmail.com',
+//     phone: '09900',
+// } 
+// const { id, email, ...otherUserData} = user
+// console.log(email);
+// console.log(otherUserData);
+
+//? rest operator in function
+function totalInRest (...args) {
+    let total = 0
+    for(const item of args) total += item
+    console.log(total)
+}
+totalInRest (1,2,8,368,7,6,5)
+//! task
+function discount (discount, ...price) {
+    let total = 0
+    for (const item of price) total += item
+    const result = total - (total * discount / 100)
+    console.log(total) 
+    console.log(Math.floor(result))
+}
+
+discount(0.3, 1 ,5,34,8,7,6,425,97,354,456,712)
