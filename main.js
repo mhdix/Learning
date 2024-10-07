@@ -299,7 +299,7 @@
 
 
 //? 1403/7/15
-//? start: 39, end: 40
+//? start: 39, end: 41
 
 
 //? template literal
@@ -383,3 +383,25 @@
 // const newUser = { ...user }
 // newUser.email = 'user@gmail.com'
 // console.log(user, newUser)
+
+
+
+//? 1403/7/16
+//? start: 42, end: 
+
+//? rest operator
+//! array
+const tags1 = ['react.js', 'vue.js']
+const tags2 = ['next.js', 'nuxt.js']
+const [reactTag, ...other] = [...tags1, ...tags2];
+console.log(other)
+//! object
+const user = {
+    id: 1,
+    name: 'mahdi',
+    email: 'm@gmail.com',
+    phone: '09900',
+} 
+const { id, email, ...otherUserData} = user
+console.log(email);
+console.log(otherUserData);
