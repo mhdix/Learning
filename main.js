@@ -502,17 +502,17 @@
 
 
 //? an example of map data type
-const john = { name: "john Doe" };
-lily = {name: 'lily Doe'}
-peter = {name: 'peter pit'}
+// const john = { name: "john Doe" };
+// lily = {name: 'lily Doe'}
+// peter = {name: 'peter pit'}
 
-const userRole = new Map([
-  [john, "admin"],
-  [lily, "editor"],
-  [peter, "subscriber"],
-]);
+// const userRole = new Map([
+//   [john, "admin"],
+//   [lily, "editor"],
+//   [peter, "subscriber"],
+// ]);
 
-console.log(userRole.get(john))
+// console.log(userRole.get(john))
 
 //! loop on item keys name
 // for(const item of userRole.keys()) {
@@ -536,3 +536,25 @@ console.log(userRole.get(john))
 //! convert map keys or values to array
 // console.log([...userRole.keys()]) //! convert map keys to array
 // console.log([...userRole.values()]) //! convert map values to array
+
+//? what type of data to select
+// if list data use array or set   
+// if object => object, map
+
+//? map and set challange 
+//? get all yunique roles
+const user = john = { name: "john Dae" },
+  ali = { name: "ali asghari" },
+  mahdi = { name: "mahdi domanloo" },
+akbar = { name: "akbar darzi" };
+
+const userRole = new Map([
+  [john, "admin"],
+  [ali, "subscriber"],
+  [mahdi, "admin"],
+  [akbar, "creator"],
+]);
+
+
+const uniqueRole = [...new Set(userRole.values())]; 
+console.log([...uniqueRole]);
