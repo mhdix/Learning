@@ -542,7 +542,6 @@
 // if object => object, map
 
 //? map and set challange 
-
 //! get all unique roles
 // const user = john = { name: "john Dae" },
 //   ali = { name: "ali asghari" },
@@ -561,17 +560,28 @@
 
 //? function Declration & function Expressoion
 //! function Declration
-add(4, 6)
-function add (a, b) {
-  console.log(a + b);
-  return a+b
-}
-add(19,4)
+// add(4, 6)
+// function add (a, b) {
+//   console.log(a + b);
+//   return a+b
+// }
+// add(19,4)
 
 //! function Expression
-addExpression(5, 6);
-const addExpression = function (a, b) {
-  console.log(a + b)
-  return a + b
+// addExpression(5, 6);
+// const addExpression = function (a, b) {
+//   console.log(a + b)
+//   return a + b
+// }
+// addExpression(5 , 6)
+
+//? arrow fnuction => 
+//! function declratioon 
+function calculateOffPrice(discount, price) {
+  console.log(discount, price)
+} 
+//! arrow function
+const calculateOffPrice = (discount, price) => {
+  console.log(discount, price);
 }
-addExpression(5 , 6)
+//! implicit  
