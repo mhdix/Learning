@@ -387,7 +387,7 @@
 
 
 //? 1403/7/16
-//? start: 42, end: 44
+//? start: 42, end: 48
 
 //? rest operator
 //! array
@@ -542,19 +542,36 @@
 // if object => object, map
 
 //? map and set challange 
-//? get all yunique roles
-const user = john = { name: "john Dae" },
-  ali = { name: "ali asghari" },
-  mahdi = { name: "mahdi domanloo" },
-akbar = { name: "akbar darzi" };
 
-const userRole = new Map([
-  [john, "admin"],
-  [ali, "subscriber"],
-  [mahdi, "admin"],
-  [akbar, "creator"],
-]);
+//! get all unique roles
+// const user = john = { name: "john Dae" },
+//   ali = { name: "ali asghari" },
+//   mahdi = { name: "mahdi domanloo" },
+// akbar = { name: "akbar darzi" };
 
+// const userRole = new Map([
+//   [john, "admin"],
+//   [ali, "subscriber"],
+//   [mahdi, "admin"],
+//   [akbar, "creator"],
+// ]);
 
-const uniqueRole = [...new Set(userRole.values())]; 
-console.log([...uniqueRole]);
+// const uniqueRole = [...new Set(userRole.values())]; 
+// console.log([...uniqueRole]);
+
+//? function Declration & function Expressoion
+//! function Declration
+add(4, 6)
+function add (a, b) {
+  console.log(a + b);
+  return a+b
+}
+add(19,4)
+
+//! function Expression
+addExpression(5, 6);
+const addExpression = function (a, b) {
+  console.log(a + b)
+  return a + b
+}
+addExpression(5 , 6)
