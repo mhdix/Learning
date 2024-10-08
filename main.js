@@ -591,3 +591,12 @@ function getUserRole (role) {
 //! implicit  
 // const sum = a => 5 + a
 // console.log(sum(2))
+
+
+//? default-parameters
+function calcOffPrice (price, discount = 0.3) { 
+  let sumPrice = 0
+  for(const calcPrice of price) sumPrice += calcPrice
+  return Math.floor((1 - discount) * sumPrice);
+}
+console.log(calcOffPrice([15, 20, 8, 40] ))
