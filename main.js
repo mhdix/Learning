@@ -104,39 +104,39 @@
 // calculateArea (50000)
 
 //! RETURN IN FUNCTION
-// function msgRole (role) {
-//   if(role === 'TEACHER') return 'hello teacher role'
-//   if(role === "MERCHANT") return 'hello merchant role'
-//   return 'hello unknown user'
-// }
-// const rolse = msgRole("TEACHER");
-// console.log(rolse)
+function msgRole (role) {
+  if(role === 'TEACHER') return 'hello teacher role'
+  if(role === "MERCHANT") return 'hello merchant role'
+  return 'hello unknown user'
+}
+const rolse = msgRole("TEACHER");
+console.log(rolse)
 
-// function getUserRole (role) {
-//   if (role === "admin") {
-//     return "hello admin"
-//   } if (role === "teacher") {
-//     return "hello teacher"
-//   }
-//   return 'unknown user role'
-// }
+function getUserRole (role) {
+  if (role === "admin") {
+    return "hello admin"
+  } if (role === "teacher") {
+    return "hello teacher"
+  }
+  return 'unknown user role'
+}
 
-// console.log(getUserRole ('admin'))
+console.log(getUserRole ('admin'))
 
-// function getUserRole (role) {
-//   switch (role) {
-//     case 'admin':{
-//        return 'hello admin';
-//       }
+function getUserRole (role) {
+  switch (role) {
+    case 'admin':{
+       return 'hello admin';
+      }
       
-//     case 'teacher':{
-//       return 'hello teacher';
-//     }
+    case 'teacher':{
+      return 'hello teacher';
+    }
     
-//     default:
-//       return 'hello unknown user';
-//   }
-// }
+    default:
+      return 'hello unknown user';
+  }
+}
 
 // console.log(getUserRole('admind'))
 
@@ -402,7 +402,7 @@
 //     email: 'm@gmail.com',
 //     phone: '09900',
 // } 
-// const { id, email, ...otherUserData} = user
+// const { id, eamil, ...otherUserData} = user
 // console.log(email);
 // console.log(otherUserData);
 
@@ -412,7 +412,7 @@
 //     for(const item of args) total += item
 //     console.log(total)
 // }
-// totalInRest (1,2,8,368,7,6,5)
+// totalInRest (1, 2, 8, 38, 7, 6, 5)
 //! task
 // function discount (discount, ...price) {
 //     let total = 0
@@ -427,7 +427,7 @@
 //? set data structure
 
 //* Set: iterable data ==> array, string
-// const set = new Set([1,2,3,4,5,6])
+// const set = new Set([1,2,3,4,5,5,6])
 // console.log(set)
 
 //! size 
@@ -452,7 +452,7 @@
 
 //! 7. loop
 // for (let item of set) {
-//     console.log('in loop')
+//     console.log('loop in' + item)
 // }
 
 //! use case :
@@ -476,7 +476,7 @@
 //! set : return updated map and add key value
 // console.log(user.set('id', 1))
 
-//! chane set
+//! chaine set
 // const numbeInSet = [1,2]
 // user.set (true , 'ok').set('name', 'mahdi').set(numbeInSet, 'mahdi&mmdtaher')
 // console.log(user);
@@ -558,6 +558,10 @@
 // const uniqueRole = [...new Set(userRole.values())]; 
 // console.log([...uniqueRole]);
 
+
+// ? 1403/7/17
+// ? start : 49, end : 51
+
 //? function Declration & function Expressoion
 //! function Declration
 // add(4, 6)
@@ -577,11 +581,13 @@
 
 //? arrow fnuction => 
 //! function declratioon 
-function calculateOffPrice(discount, price) {
-  console.log(discount, price)
-} 
+// function calculateOffPrice(discount, price) {
+//   console.log(discount, price)
+// } 
 //! arrow function
-const calculateOffPrice = (discount, price) => {
-  console.log(discount, price);
-}
+// const calculateOffPrice = (discount, price) => {
+//   console.log(discount, price);
+// }
 //! implicit  
+// const sum = a => 5 + a
+// console.log(sum(2))
