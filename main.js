@@ -1,3 +1,5 @@
+"use strict";
+
 // const  user = {name: 'mosi' , lName: 'mosa'}
 
 // console.log(user.name)
@@ -602,7 +604,7 @@
 // console.log(calcOffPrice([15, 20, 8, 40] ))
 
 //? 1403/7/18
-//? start: 53, end  
+//? start: 53, end: 57  
 
 //? pass primitive VS refrence 
 // const classRoom = {
@@ -684,3 +686,24 @@
 // console.log(operatorOnArray([1, 3, 5, 3], 2, inc));
 // console.log(operatorOnArray([1, 3, 5, 3], 7, mul));
 // console.log(operatorOnArray([1, 3, 5, 3], 1, dec));
+
+//? call, apply, binde
+
+//? call
+const user = {
+  name: 'mahdi',
+  job: 'developer',
+  birthYear: 1994,
+  getYearOfBirth () {
+    console.log(2023 - this.birthYear)
+    return 2023 - this.birthYear
+  }
+}
+
+const guestUser = {
+  name : "mahdi",
+  birthYear: 2001
+}
+user.getYearOfBirth()
+const newGetYear = user.getYearOfBirth.call(guestUser);
+newGetYear()
