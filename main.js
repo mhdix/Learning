@@ -625,8 +625,62 @@
 // function sayHello() {
 //   return "hello ! "
 // }
-// function greeting (name, fn) {
-//   return fn() + name 
+// function greeting (name, cb) {
+//   return cb() + name 
 // }
 // console.log(greeting("mhdi ", sayHello));
-// console.log(greeting("mmd ", sayHi));
+// console.log(greeting("mmd ", sayHi)); 
+
+//? CB
+//* 1
+// function newGreeting(str) {
+//   return function (name) {
+//     console.log(str + name)
+//   }
+// }
+// newGreeting('Hi ! ')('mahdi') ✅
+//* 2
+// function newGreeting(str) {
+//   return function (name) {
+//     console.log(str + name)
+//   }
+// }
+// const fun = newGreeting('Hi ! ')
+// fun('mahdi') ✅
+//! Summarizing
+// const newGreeting = (str) => (name) => console.log(str + name);
+// const fun = newGreeting('Hi ! ')
+// fun('mahdi') ✅f
+
+//? HOF usage (task)
+// function mulArr (data, num) {
+//   const newArr = []
+//   for(const item of data) {
+//     newArr.push(item + num)
+//   }
+//   return newArr
+// } 
+// console.log(mulArr([1, 2, 3, 4], 2)); //! 1
+
+//! best solution
+//! cb => callback function
+//* HOF
+// function operatorOnArray(data, num, cb) {
+//   let newNumber = []
+//   for (const item of data) {
+//     newNumber.push(cb(item, num))
+//   }
+//   return newNumber
+// }
+// function inc(data, num) {
+//   return data + num
+// }
+// function dec (data, num) {
+//   return data - num
+// }
+// function mul (data, num) {
+//   return data * num
+// }
+// console.log(operatorOnArray([1, 3, 5, 3], 2, inc));
+// console.log(operatorOnArray([1, 3, 5, 3], 7, mul));
+// console.log(operatorOnArray([1, 3, 5, 3], 1, dec));
