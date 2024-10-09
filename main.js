@@ -104,39 +104,39 @@
 // calculateArea (50000)
 
 //! RETURN IN FUNCTION
-function msgRole (role) {
-  if(role === 'TEACHER') return 'hello teacher role'
-  if(role === "MERCHANT") return 'hello merchant role'
-  return 'hello unknown user'
-}
-const rolse = msgRole("TEACHER");
-console.log(rolse)
+// function msgRole (role) {
+//   if(role === 'TEACHER') return 'hello teacher role'
+//   if(role === "MERCHANT") return 'hello merchant role'
+//   return 'hello unknown user'
+// }
+// const rolse = msgRole("TEACHER");
+// console.log(rolse)
 
-function getUserRole (role) {
-  if (role === "admin") {
-    return "hello admin"
-  } if (role === "teacher") {
-    return "hello teacher"
-  }
-  return 'unknown user role'
-}
+// function getUserRole (role) {
+//   if (role === "admin") {
+//     return "hello admin"
+//   } if (role === "teacher") {
+//     return "hello teacher"
+//   }
+//   return 'unknown user role'
+// }
 
-console.log(getUserRole ('admin'))
+// console.log(getUserRole ('admin'))
 
-function getUserRole (role) {
-  switch (role) {
-    case 'admin':{
-       return 'hello admin';
-      }
+// function getUserRole (role) {
+//   switch (role) {
+//     case 'admin':{
+//        return 'hello admin';
+//       }
       
-    case 'teacher':{
-      return 'hello teacher';
-    }
+//     case 'teacher':{
+//       return 'hello teacher';
+//     }
     
-    default:
-      return 'hello unknown user';
-  }
-}
+//     default:
+//       return 'hello unknown user';
+//   }
+// }
 
 // console.log(getUserRole('admind'))
 
@@ -605,12 +605,28 @@ function getUserRole (role) {
 //? start: 53, end  
 
 //? pass primitive VS refrence 
-const classRoom = {
-  name: 'mahdi'
-}
-function changeUser(obj) {
-  obj.name = 'mani'
-  return obj
-}
-changeUser(classRoom)
-console.log(classRoom)
+// const classRoom = {
+//   name: 'mahdi'
+// }
+// function changeUser(obj) {
+//   obj.name = 'mani'
+//   return obj
+// }
+// changeUser(classRoom)
+// console.log(classRoom)
+
+//? first-class function
+// در هر زبان برنامه نویسی که با فانکشن ها مثل 
+
+//? HOF 
+// function sayHi () {
+//   return "Hi ! "
+// }
+// function sayHello() {
+//   return "hello ! "
+// }
+// function greeting (name, fn) {
+//   return fn() + name 
+// }
+// console.log(greeting("mhdi ", sayHello));
+// console.log(greeting("mmd ", sayHi));
