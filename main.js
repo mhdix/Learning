@@ -560,7 +560,7 @@ function getUserRole (role) {
 
 
 // ? 1403/7/17
-// ? start : 49, end : 51
+// ? start : 49, end : 52
 
 //? function Declration & function Expressoion
 //! function Declration
@@ -594,9 +594,23 @@ function getUserRole (role) {
 
 
 //? default-parameters
-function calcOffPrice (price, discount = 0.3) { 
-  let sumPrice = 0
-  for(const calcPrice of price) sumPrice += calcPrice
-  return Math.floor((1 - discount) * sumPrice);
+// function calcOffPrice (price, discount = 0.3) { 
+//   let sumPrice = 0
+//   for(const calcPrice of price) sumPrice += calcPrice
+//   return Math.floor((1 - discount) * sumPrice);
+// }
+// console.log(calcOffPrice([15, 20, 8, 40] ))
+
+//? 1403/7/18
+//? start: 53, end  
+
+//? pass primitive VS refrence 
+const classRoom = {
+  name: 'mahdi'
 }
-console.log(calcOffPrice([15, 20, 8, 40] ))
+function changeUser(obj) {
+  obj.name = 'mani'
+  return obj
+}
+changeUser(classRoom)
+console.log(classRoom)
