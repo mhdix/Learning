@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // const  user = {name: 'mosi' , lName: 'mosa'}
 
@@ -604,7 +604,7 @@
 // console.log(calcOffPrice([15, 20, 8, 40] ))
 
 //? 1403/7/18
-//? start: 53, end: 57  
+//? start: 53, end: 57
 
 //? pass primitive VS refrence 
 // const classRoom = {
@@ -690,20 +690,54 @@
 //? call, apply, binde
 
 //? call
-const user = {
-  name: 'mahdi',
-  job: 'developer',
-  birthYear: 1994,
-  getYearOfBirth () {
-    console.log(2023 - this.birthYear)
-    return 2023 - this.birthYear
-  }
-}
+// const user = {
+//   name: 'mahdi',
+//   job: 'developer',
+//   birthYear: 1994,
+//   getYearOfBirth () {
+//     console.log(2023 - this.birthYear)
+//     return 2023 - this.birthYear
+//   }
+// }
 
-const guestUser = {
-  name : "mahdi",
-  birthYear: 2001
-}
-user.getYearOfBirth()
-const newGetYear = user.getYearOfBirth.call(guestUser);
-newGetYear()
+// const guestUser = {
+//   name : "mahdi",
+//   birthYear: 2001 
+// }
+// user.getYearOfBirth()
+// const newGetYear = user.getYearOfBirth.call(guestUser);
+// newGetYear()
+
+//? apply
+// const user = {
+//   name: 'mahdi',
+//   job: 'developer',
+//   birthYear: 1994,
+//   getYearOfBirth () {
+//     console.log(2023 - this.birthYear)
+//     return 2023 - this.birthYear
+//   },
+//   msg (msg,num) {
+//     console.log(`mahdi ! you have unread message ${msg,num}`);
+//   }
+// }
+// const gueatUser = {
+//   name: 'mahdi'
+//   ,birthYear: 1850
+// }
+// const newUser = user.getYearOfBirth.apply(gueatUser)
+// const newMsg = user.msg.apply(gueatUser, ['aaaa',54])
+
+//? bind 
+// const user = {
+//   name: 'mahdi',
+//   birthYear: 1990,
+//   getYearOfBirth(){
+//     console.log(this, 2024 - this.birthYear)
+//   }
+// }
+
+// const guestUser = {
+//   birthYear : 2002
+// }
+// console.log(user.getYearOfBirth.bind(guestUser))
