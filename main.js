@@ -834,10 +834,27 @@
 
 //? challenge 64 
 //? capitilize first letter
+// const userName = 'mhDiX'
+// function capitilizeLetter(string) {
+//     const newString = string[0].toUpperCase()  + string.toLowerCase().slice(1)
+//     console.log(newString)
+// }
+// console.log(capitilizeLetter(userName))
 
-const userName = 'mhDiX'
-function capitilizeLetter(string) {
-    const newString = string[0].toUpperCase()  + string.toLowerCase().slice(1)
-    console.log(newString)
+//? padding in string 65
+// const name = 'mshdi'
+// console.log(name.padEnd(10, "*"));
+// console.log(name.padStart(10, "*"));
+//! challange convert 2:5:30 to 02:05:30
+const time = '2:5:30'
+const timeSplit = time.split(':')
+function padTime(time){
+    let [hr, min, sec] = time.split(':')
+    hr = hr.padStart(2, "0");
+    min = min.padStart(2, "0");
+    sec = sec.padStart(2, "0");
+    const newTime = [hr, min, sec].join(':')  
+    return newTime
 }
-console.log(capitilizeLetter(userName))
+console.log(padTime('2:4:30'))
+
