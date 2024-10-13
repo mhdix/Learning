@@ -728,6 +728,8 @@
 // const newUser = user.getYearOfBirth.apply(gueatUser)
 // const newMsg = user.msg.apply(gueatUser, ['aaaa',54])
 
+//? 1403/7/20
+//? start: 58, end:59
 //? bind 
 // const user = {
 //   name: 'mahdi',
@@ -741,3 +743,80 @@
 //   birthYear : 2002
 // }
 // console.log(user.getYearOfBirth.bind(guestUser))
+
+//? closure
+// const CounterReq = () =>{
+//   let count = 0
+//   return function inner (){
+//     count ++;
+//     return count
+//   }
+// }
+
+// const loginReq = CounterReq()
+// console.log(loginReq());
+// console.log(loginReq());
+// console.log(loginReq());
+// console.log(loginReq());
+// console.log(loginReq());
+
+// const signUpReq = CounterReq()
+// console.log(signUpReq());
+// console.log(signUpReq());
+// console.log(signUpReq());
+
+// console.log(loginReq())
+
+//? 1403/7/21
+//? start: 60, end: 61
+
+//? string
+// const userName = 'mahdi domanloo'
+//* basic string methods
+//! .indexOf
+// console.log(userName.indexOf('x'))
+//! .lastIndexOf
+// console.log(userName.lastIndexOf('x'))
+//! .slice() => no mutation
+// console.log(userName.slice(4)); //* start 4 to end
+// console.log(userName.slice(2, 8)) //* start 2 end 7=8
+// console.log(userName.slice(-4)) //* start of end 4 index 
+// console.log(userName.slice(2, -2)) //* start of end 4 index 
+//! .includs() => search in character
+// console.log(userName.includes("a")); //* true
+// console.log(userName.includes("A")); //* false
+// console.log(userName.includes("q")); //* false
+//! .startWith()
+// const url = '/resume/react'
+// console.log(url.startsWith("/resume")); //* true 
+// console.log(url.startsWith("resume")); //* false
+
+//? join - split - trim
+// const postTitle = '                     the new features in next.js V 13 '
+// console.log(postTitle.trim(""));
+
+//! task => search in url
+// const url2 = 'https://Mhdix.ir/Resume/react'
+// const printSelectUrl = url2.toLowerCase().indexOf("resume");
+// console.log(url2.slice(printSelectUrl))
+//! task => page title with last
+// const pageTitle = url2.split("/")[url2.split("/").length - 1]; 
+// console.log(pageTitle);
+
+//? 1403/7/22
+//? start: 62, end: 
+
+
+//? challenge 62
+//? string in search 62
+
+const string = 'my name is mahdi domanloo Im Programmer And Live in Iran' 
+function stringSearch(str, searchTerm) {
+    const indexOf = str.toLowerCase().indexOf(searchTerm.toLowerCase().trim())
+    if(indexOf > -1) {
+        return `The first oxxurance of ${searchTerm} in the string is ${indexOf}`
+    }
+    return 'not invludes'
+    console.log(first)
+}
+console.log(stringSearch(string, '  My'))
