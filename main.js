@@ -859,15 +859,24 @@
 // console.log(padTime('2:4:30'))
 
 
-//! challeng 2 cardNumber start 
-const cardNume = ' 6037 9981 9792 1777'
-const newCard = cardNume.trim()
-function splitCardNumber (card) {
-    console.log(newCard)
-    if (card.indexOf("-") >= 0) return card.split('-').join('');
-    if (card.indexOf(' ') >= 0) return card.split(" ").join("");
-    return card
-}
-const editerdCardNumber = newCard.slice(14).padStart(16, '*');
-console.log(editerdCardNumber)
-console.log(splitCardNumber(editerdCardNumber))
+//! challeng 2 cardNumber start self
+// const cardNume = ' 6037 9981 9792 1777'
+// const newCard = cardNume.trim()
+// function splitCardNumber (card) {
+//     console.log(newCard)
+//     if (card.indexOf("-") >= 0) return card.split('-').join('');
+//     if (card.indexOf(' ') >= 0) return card.split(" ").join("");
+//     return card
+// }
+// const editerdCardNumber = newCard.slice(14).padStart(16, '*');
+// console.log(editerdCardNumber)
+// console.log(splitCardNumber(editerdCardNumber))
+//! challeng 2 cardNumber start video
+// const cardNume2 = "  6037-9981-9792-1777";
+// function maskCreditCard(cardNo) {
+//     const str = String(cardNo).replace(' ', '').replace('-', '')   
+//     const last = str.slice(-4)
+//     return last.padStart(16, '*')
+//     console.log(last)
+// }
+// console.log(maskCreditCard(cardNume2))
