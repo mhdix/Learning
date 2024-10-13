@@ -810,13 +810,26 @@
 //? challenge 62
 //? string in search 62
 
-const string = 'my name is mahdi domanloo Im Programmer And Live in Iran' 
-function stringSearch(str, searchTerm) {
-    const indexOf = str.toLowerCase().indexOf(searchTerm.toLowerCase().trim())
-    if(indexOf > -1) {
-        return `The first oxxurance of ${searchTerm} in the string is ${indexOf}`
-    }
-    return 'not invludes'
-    console.log(first)
+// const string = 'my name is mahdi domanloo Im Programmer And Live in Iran' 
+// function stringSearch(str, searchTerm) {
+//     const indexOf = str.toLowerCase().indexOf(searchTerm.toLowerCase().trim())
+//     if(indexOf > -1) {
+//         return `The first oxxurance of ${searchTerm} in the string is ${indexOf}`
+//     }
+//     return 'not invludes'
+//     console.log(first)
+// }
+// console.log(stringSearch(string, '  My'))
+
+//? challenge 63
+//? check email exist 
+
+
+const registerEmail = 'mahdi@gmail.com'
+function checkEmailExist (email) {
+    const signUpEmail = email.toLowerCase().trim()
+    const userName = signUpEmail.split('@')[0]
+    if (registerEmail === signUpEmail) return 'email already exist'
+    return `wellcome! , this is your userName ${userName}`
 }
-console.log(stringSearch(string, '  My'))
+console.log(checkEmailExist('mahdif@gmail.com'))
