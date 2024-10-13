@@ -846,15 +846,28 @@
 // console.log(name.padEnd(10, "*"));
 // console.log(name.padStart(10, "*"));
 //! challange convert 2:5:30 to 02:05:30
-const time = '2:5:30'
-const timeSplit = time.split(':')
-function padTime(time){
-    let [hr, min, sec] = time.split(':')
-    hr = hr.padStart(2, "0");
-    min = min.padStart(2, "0");
-    sec = sec.padStart(2, "0");
-    const newTime = [hr, min, sec].join(':')  
-    return newTime
-}
-console.log(padTime('2:4:30'))
+// const time = '2:5:30'
+// const timeSplit = time.split(':')
+// function padTime(time){
+//     let [hr, min, sec] = time.split(':')
+//     hr = hr.padStart(2, "0");
+//     min = min.padStart(2, "0");
+//     sec = sec.padStart(2, "0");
+//     const newTime = [hr, min, sec].join(':')  
+//     return newTime
+// }
+// console.log(padTime('2:4:30'))
 
+
+//! challeng 2 cardNumber start 
+const cardNume = ' 6037 9981 9792 1777'
+const newCard = cardNume.trim()
+function splitCardNumber (card) {
+    console.log(newCard)
+    if (card.indexOf("-") >= 0) return card.split('-').join('');
+    if (card.indexOf(' ') >= 0) return card.split(" ").join("");
+    return card
+}
+const editerdCardNumber = newCard.slice(14).padStart(16, '*');
+console.log(editerdCardNumber)
+console.log(splitCardNumber(editerdCardNumber))
