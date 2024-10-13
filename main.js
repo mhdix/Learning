@@ -823,13 +823,21 @@
 
 //? challenge 63
 //? check email exist 
+// const registerEmail = 'mahdi@gmail.com'
+// function checkEmailExist (email) {
+//     const signUpEmail = email.toLowerCase().trim()
+//     const userName = signUpEmail.split('@')[0]
+//     if (registerEmail === signUpEmail) return 'email already exist'
+//     return `wellcome! , this is your userName ${userName}`
+// }
+// console.log(checkEmailExist('mahdif@gmail.com'))
 
+//? challenge 64 
+//? capitilize first letter
 
-const registerEmail = 'mahdi@gmail.com'
-function checkEmailExist (email) {
-    const signUpEmail = email.toLowerCase().trim()
-    const userName = signUpEmail.split('@')[0]
-    if (registerEmail === signUpEmail) return 'email already exist'
-    return `wellcome! , this is your userName ${userName}`
+const userName = 'mhDiX'
+function capitilizeLetter(string) {
+    const newString = string[0].toUpperCase()  + string.toLowerCase().slice(1)
+    console.log(newString)
 }
-console.log(checkEmailExist('mahdif@gmail.com'))
+console.log(capitilizeLetter(userName))
