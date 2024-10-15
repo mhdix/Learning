@@ -881,7 +881,7 @@
 // console.log(maskCreditCard(cardNume2))
 
 //? 1403/7/24 
-//? start : 67, end: 73
+//? start : 67, end: 74
 
 const arr = ['A', "B", "C", "D"]
 //! push => add element to last arr
@@ -1050,39 +1050,64 @@ const arr = ['A', "B", "C", "D"]
 // },0)
 // console.log(totalScore)
 //! task 2 => reduce in price 
-const products = [
-  {
-    id: 1,
-    title: "p-1",
-    price: "88.64$",
-    qty: 1
-  },
-  {
-    id: 2,
-    title: "p-2",
-    price: "34.13$",
-    qty: 3
-  },
-  {
-    id: 3,
-    title: "p-3",
-    price: "52.34$",
-    qty: 5
-  },
-  {
-    id: 4,
-    title: "p-4",
-    price: "65.43$",
-    qty: 2
-  },
-];
-const totalPrice = products.reduce((acc, curr) => {
-    return acc + Number(curr.price.split('$')[0])
-},0)
+// const products = [
+//   {
+//     id: 1,
+//     title: "p-1",
+//     price: "88.64$",
+//     qty: 1
+//   },
+//   {
+//     id: 2,
+//     title: "p-2",
+//     price: "34.13$",
+//     qty: 3
+//   },
+//   {
+//     id: 3,
+//     title: "p-3",
+//     price: "52.34$",
+//     qty: 5
+//   },
+//   {
+//     id: 4,
+//     title: "p-4",
+//     price: "65.43$",
+//     qty: 2
+//   },
+// ];
+// const totalPrice = products.reduce((acc, curr) => {
+//     return acc + Number(curr.price.split('$')[0])
+// },0)
 // console.log(totalPrice.toFixed(2))
 //! 2 
-const totalPrice2 = products.reduce((acc, curr) => {
-    const price = Number(curr.price.split('$')[0]) * curr.qty
-    return acc + price
-},0)
-console.log(totalPrice2.toFixed(2))
+// const totalPrice2 = products.reduce((acc, curr) => {
+//     const price = Number(curr.price.split('$')[0]) * curr.qty
+//     return acc + price
+// },0)
+// console.log(totalPrice2.toFixed(2))
+
+//? challenge : calc average challenge 74
+//? calc average of marks
+//! data :
+const userMarks1 = [5, 12, 18, 7, 19, 17, 8];
+// const userMarks2 = [5, 18, 12, 10, 19, 17, 8];
+// const userMarks3 = [5, 14, 18, 20, 19, 17, 8];
+//! calculate the average of marks
+const mark = userMarks1.reduce((acc, curr, i , arr) => acc + curr / arr.length, 0) 
+console.log(mark.toFixed(2))
+//! 2. calculaete  the average of passed students & 3.
+//! 3. shift marks based + 3 and recalculate the average
+const passAve = userMarks1
+    .filter(pass => pass >= 10)
+    .reduce((acc, curr, i , arr) => acc + (curr / arr.length),0)
+console.log(passAve)
+//! shiftMarks 
+const shiftAv = userMarks1
+    .map((m) => m + 3)
+    .reduce((acc, curr, i , arr) => acc + (curr / arr.length),0)
+  
+console.log(shiftAv.toFixed(2))
+//! shift marks passed
+const shiftAvPassed = userMarks1.map((m) => m+3).filter((m) => m >= 10).reduce((acc, curr, i , arr) => acc + curr / arr.length, 0 )
+console.log(shiftAvPassed)
