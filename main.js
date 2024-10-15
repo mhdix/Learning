@@ -958,18 +958,71 @@ const arr = ['A', "B", "C", "D"]
 
 //? foreach on set and map data
 //! foreach on set 
-const courses = ['reAct', 'html', 'html', 'csS', 'vue']
-const coursesSet = new Set(courses)
-coursesSet.forEach((item, key) => {
-    console.log(item, key)
-})
+// const courses = ['reAct', 'html', 'html', 'csS', 'vue']
+// const coursesSet = new Set(courses)
+// coursesSet.forEach((item, key) => {
+//     console.log(item, key)
+// })
 //! foreach on map and map data
-const mapData = new Map([
-  ["admin", "mahdi"],
-  ["user", "mmdi"],
-  ["editor", "samira"],
-  ["admin", "javad"],
-]);
-mapData.forEach((value, key) => {
-    console.log(value, key)
-})
+// const mapData = new Map([
+//   ["admin", "mahdi"],
+//   ["user", "mmdi"],
+//   ["editor", "samira"],
+//   ["admin", "javad"],
+// ]);
+// mapData.forEach((value, key) => {
+//     console.log(value, key)
+// })
+
+//? map, filter, reduce method : transform array NOT MUTATE
+//! DATA:
+const user = [
+  {
+    id: 1,
+    isActive: true,
+    role: 'TEACHER',
+    age: 28,
+    name: "mahdi",
+  },
+  {
+    id: 2,
+    isActive: false,
+    role: 'ADMIN',
+    age: 38,
+    name: "mike",
+  },
+  {
+    id: 3,
+    isActive: true,
+    role: 'ADMIN',
+    age: 14,
+    name: "petter",
+  },
+];
+//! map: return 1.return new Arr, 2.DONT MUTATE,   
+//! user.map((item, index, array) => {})
+// const userIds = user.map((user) => {
+//     return {id: user.id}
+// })
+// console.log(userIds)
+//! axample
+// const newObject = {}
+// user.map((item, index) => {
+//     const activeUser = item.isActive === true ? user : false;
+//     if(activeUser !== false){
+//         return user.push({ ...newObject , message: 'salam'})
+//     }
+// })
+// console.log(user)
+// const userIds = user.map(({id},index ) => {
+//     return { id }
+// })
+// console.log(userIds)
+//! example => 
+// const newUsers = user.map((user) => {
+//     return {
+//         ...user,
+//         msg: `Hi ${user.name}, Yout profile is ${user.isActive ? 'Activated' : 'NOT Activated'}, and your role is ${user.role}`
+//      }
+// })
+// console.log(newUsers)
