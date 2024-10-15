@@ -881,7 +881,7 @@
 // console.log(maskCreditCard(cardNume2))
 
 //? 1403/7/24 
-//? start : 67, end: 
+//? start : 67, end: 73
 
 const arr = ['A', "B", "C", "D"]
 //! push => add element to last arr
@@ -976,29 +976,32 @@ const arr = ['A', "B", "C", "D"]
 
 //? map, filter, reduce method : transform array NOT MUTATE
 //! DATA:
-const user = [
-  {
-    id: 1,
-    isActive: true,
-    role: 'TEACHER',
-    age: 28,
-    name: "mahdi",
-  },
-  {
-    id: 2,
-    isActive: false,
-    role: 'ADMIN',
-    age: 38,
-    name: "mike",
-  },
-  {
-    id: 3,
-    isActive: true,
-    role: 'ADMIN',
-    age: 14,
-    name: "petter",
-  },
-];
+// const user = [
+//   {
+//     id: 1,
+//     isActive: true,
+//     role: 'TEACHER',
+//     age: 28,
+//     name: "mahdi",
+//     score: 1
+//   },
+//   {
+//     id: 2,
+//     isActive: false,
+//     role: 'ADMIN',
+//     age: 38,
+//     name: "mike",
+//     score: 3
+//   },
+//   {
+//     id: 3,
+//     isActive: true,
+//     role: 'ADMIN',
+//     age: 14,
+//     name: "petter",
+//     score: 5
+//   },
+// ];
 //! map: return 1.return new Arr, 2.DONT MUTATE,   
 //! user.map((item, index, array) => {})
 // const userIds = user.map((user) => {
@@ -1028,13 +1031,58 @@ const user = [
 // console.log(newUsers)
 
 //? filter method : transform array *NOT MUTATE => based on condition 
-//* how to filter all active users ? 
+//! how to filter all active users ? 
 // const activeUsers = user.filter((user,index) => user.isActive) 
 // console.log(activeUsers)
 //* task = 10 user => click user 3 => delete user id 3 
-let deleted = []
-function filterUser (user, id) {
-    return deleted = user.filter(user => user.id !== id)
-}
-filterUser(user, 2)
+// let deleted = []
+// function filterUser (user, id) {
+//     return deleted = user.filter(user => user.id !== id)
+// }
+// filterUser(user, 2)
 // console.log(deleted)
+
+//? reduce method
+//! reduce => return is a single value reduce((acc, cur, index, arr) => {})
+// const totalScore = user.reduce((acc, curr, index) => {
+//     console.log(index, acc, curr.score)
+//     return acc + curr.score
+// },0)
+// console.log(totalScore)
+//! task 2 => reduce in price 
+const products = [
+  {
+    id: 1,
+    title: "p-1",
+    price: "88.64$",
+    qty: 1
+  },
+  {
+    id: 2,
+    title: "p-2",
+    price: "34.13$",
+    qty: 3
+  },
+  {
+    id: 3,
+    title: "p-3",
+    price: "52.34$",
+    qty: 5
+  },
+  {
+    id: 4,
+    title: "p-4",
+    price: "65.43$",
+    qty: 2
+  },
+];
+const totalPrice = products.reduce((acc, curr) => {
+    return acc + Number(curr.price.split('$')[0])
+},0)
+// console.log(totalPrice.toFixed(2))
+//! 2 
+const totalPrice2 = products.reduce((acc, curr) => {
+    const price = Number(curr.price.split('$')[0]) * curr.qty
+    return acc + price
+},0)
+console.log(totalPrice2.toFixed(2))
