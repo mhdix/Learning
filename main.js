@@ -955,3 +955,21 @@ const arr = ['A', "B", "C", "D"]
 // }
 
 // console.log(lowerCaseItem('mahdi domanloo'))
+
+//? foreach on set and map data
+//! foreach on set 
+const courses = ['reAct', 'html', 'html', 'csS', 'vue']
+const coursesSet = new Set(courses)
+coursesSet.forEach((item, key) => {
+    console.log(item, key)
+})
+//! foreach on map and map data
+const mapData = new Map([
+  ["admin", "mahdi"],
+  ["user", "mmdi"],
+  ["editor", "samira"],
+  ["admin", "javad"],
+]);
+mapData.forEach((value, key) => {
+    console.log(value, key)
+})
