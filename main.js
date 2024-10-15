@@ -804,8 +804,7 @@
 // console.log(pageTitle);
 
 //? 1403/7/22
-//? start: 62, end: 
-
+//? start: 62, end: 66
 
 //? challenge 62
 //? string in search 62
@@ -880,3 +879,79 @@
 //     console.log(last)
 // }
 // console.log(maskCreditCard(cardNume2))
+
+//? 1403/7/24 
+//? start : 67, end: 
+
+const arr = ['A', "B", "C", "D"]
+//! push => add element to last arr
+// console.log(arr.push("f"))
+// console.log(arr)
+//! pop => remove element to last arr
+// console.log(arr.pop());
+// console.log(arr)
+//! shift => remove element to first arr
+//  console.log(arr.shift('A'))
+//  console.log(arr)
+//! unshift => add element to first arr
+//  console.log(arr.unshift('V'));
+// console.log(arr)
+//! indexOf
+// console.log(arr.indexOf('B'))
+//! includs
+// console.log(arr.includes('B'))
+
+//? slice-splice-concat-remove-join-at
+//! slice  : not mutate
+// console.log(arr.slice(1, 3));
+// console.log(arr.slice(-1));
+// console.log(arr.slice()); //* clone arr
+// console.log(arr)
+//! splice : Mutate 
+// console.log(arr.splice(1))
+// console.log(arr.splice(1 ,2 , 'aaa', 'bbb'))
+// console.log(arr)
+//! reverse: 
+// console.log(arr.reverse())
+//! join: NOT MUTATE
+// console.log(arr.join('-'))
+//! concat: NOT MUTATE
+// const arr2 = ['E', 'F', 'D', 'H']
+// console.log(arr.concat('t'))
+// const clone = arr.concat(arr2); //! combine
+// console.log(clone)  
+// console.log(arr)
+//! at : 
+// console.log(arr.at(0))
+//! access the last index of an Array
+//* 1. []
+// console.log(arr2)
+// console.log(arr2[arr2.length-1])
+//* 2. slice:
+// console.log(arr2.slice(-1)[0])
+//* 3. pop:
+// console.log(arr2.pop())
+//* 4. at:
+// console.log(arr2)
+// console.log(arr2.at(-1))
+
+//? forEach => loop on array  
+//! for of VS forEach
+// const courses = ['reAct', 'html', 'csS', 'vue']
+// for (const item of courses) console.log(item) 
+//! forEach : courses.forEach((item, index, arr) => {})
+// const newCourses = []
+// courses.forEach((course, index) => {
+//     newCourses.push({
+//         id: index +1,
+//         title: course[0].toUpperCase() + course.toLowerCase().slice(1)
+//     })
+//     console.log(course, index)
+// })
+// console.log(newCourses)
+
+// function lowerCaseItem (str) {
+//     return str[0].toUpperCase() + str.toLowerCase().slice(1)
+// }
+
+// console.log(lowerCaseItem('mahdi domanloo'))
