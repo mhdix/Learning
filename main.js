@@ -1019,7 +1019,6 @@ const user = [
 // })
 // console.log(userIds)
 //! example => 
-
 // const newUsers = user.map((user) => {
 //     return {
 //         ...user,
@@ -1027,3 +1026,15 @@ const user = [
 //      }
 // })
 // console.log(newUsers)
+
+//? filter method : transform array *NOT MUTATE => based on condition 
+//* how to filter all active users ? 
+// const activeUsers = user.filter((user,index) => user.isActive) 
+// console.log(activeUsers)
+//* task = 10 user => click user 3 => delete user id 3 
+let deleted = []
+function filterUser (user, id) {
+    return deleted = user.filter(user => user.id !== id)
+}
+filterUser(user, 2)
+// console.log(deleted)
