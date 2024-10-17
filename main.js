@@ -1183,66 +1183,88 @@ const index = products.findIndex((product) => product.title === "p-2");
 // const every = products.every(p => p.isActive)
 // console.log(every)
 //! challenge : self test
-const enrolledCourses = [1 , 2];
-const cart = [
-  {
-    id: 1,
-    title: "p-1",
-    price: 78,
-  },
-  {
-    id: 2,
-    title: "p-2",
-    price: 50,
-  },
-  {
-    id: 3,
-    title: "p-3",
-    price: 100,
-  },
-  {
-    id: 4,
-    title: "p-4",
-    price: 54,
-  },
-];
+// const enrolledCourses = [1 , 2];
+// const cart = [
+//   {
+//     id: 1,
+//     title: "p-1",
+//     price: 78,
+//   },
+//   {
+//     id: 2,
+//     title: "p-2",
+//     price: 50,
+//   },
+//   {
+//     id: 3,
+//     title: "p-3",
+//     price: 100,
+//   },
+//   {
+//     id: 4,
+//     title: "p-4",
+//     price: 54,
+//   },
+// ];
 
-function checkAlreadyEnrolled(cart, courses) {
-  //* enrilled courses VS cart
-  const courseIds = cart.map((c) => c.id);
-  console.log(courseIds);
+// function checkAlreadyEnrolled(cart, courses) {
+//   //* enrilled courses VS cart
+//   const courseIds = cart.map((c) => c.id);
+//   console.log(courseIds);
 
-  const found = courses.some((i) => courseIds.includes(i));
-  console.log(found);
-}
+//   const found = courses.some((i) => courseIds.includes(i));
+//   console.log(found);
+// }
 // console.log(checkAlreadyEnrolled(cart, enrolledCourses));
 //! self
-function checkExistCourse(course, newCourse) {
-  if (course.length <= 0) return "empty";
-  console.log(course);
-  console.log(newCourse);
+// function checkExistCourse(course, newCourse) {
+//   if (course.length <= 0) return "empty";
+//   console.log(course);
+//   console.log(newCourse);
 
-  const coursesIds = course.map((c) => c.id);
-  console.log(coursesIds);
+//   const coursesIds = course.map((c) => c.id);
+//   console.log(coursesIds);
 
-  const found = enrolledCourses.some((id) => coursesIds.includes(id));
-  // console.log(found)
-  if (found) return "this item in your basket";
-  return "added to your basket";
-}
-console.log(checkExistCourse(cart, enrolledCourses));
+//   const found = enrolledCourses.some((id) => coursesIds.includes(id));
+//   // console.log(found)
+//   if (found) return "this item in your basket";
+//   return "added to your basket";
+// }
+// console.log(checkExistCourse(cart, enrolledCourses));
 //! indexOf 
-function checkExistCourse(course, newCourse) {
-  if (course.length <= 0) return "empty";
-  console.log(course);
-  console.log(newCourse);
+// function checkExistCourse(course, newCourse) {
+//   if (course.length <= 0) return "empty";
+//   console.log(course);
+//   console.log(newCourse);
 
-  const coursesIds = course.map((c) => c.id);
-  console.log(coursesIds);
+//   const coursesIds = course.map((c) => c.id);
+//   console.log(coursesIds);
 
-  const found = enrolledCourses.some((id) => coursesIds.indexOf(id));
-  console.log(found)
-  if (found) return "this item in your basket";
-  return "added to your basket";
-}
-console.log(checkExistCourse(cart, enrolledCourses));
+//   const found = enrolledCourses.some((id) => coursesIds.indexOf(id));
+//   console.log(found)
+//   if (found) return "this item in your basket";
+//   return "added to your basket";
+// }
+// console.log(checkExistCourse(cart, enrolledCourses));
+
+
+//? sort method : mutate !!!
+//! DATA
+const number = [1 , 2 , 1000 , 4 , 8 , 3 , 21]
+//! ascending sort
+const ascendingsSort = number.sort((a, b) =>{
+   if (a < b) return -1
+   return +1
+})
+// console.log(ascendingsSort);
+//! decending sort
+const decendingSort  = number.sort((a, b) => {
+    if(a < b) return 1;
+    if(a > b) return -1
+})
+// console.log(decendingSort)
+//! mini 
+const ascendingMini = number.sort((a, b) => a - b);
+// const decendingMini = number.sort((a, b) => b - a);
+console.log(ascendingMini);
+// console.log(decendingMini);
