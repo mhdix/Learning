@@ -1050,37 +1050,43 @@ const arr = ['A', "B", "C", "D"]
 // },0)
 // console.log(totalScore)
 //! task 2 => reduce in price 
-// const products = [
-//   {
-//     id: 1,
-//     title: "p-1",
-//     price: "88.64$",
-//     qty: 1
-//   },
-//   {
-//     id: 2,
-//     title: "p-2",
-//     price: "34.13$",
-//     qty: 3
-//   },
-//   {
-//     id: 3,
-//     title: "p-3",
-//     price: "52.34$",
-//     qty: 5
-//   },
-//   {
-//     id: 4,
-//     title: "p-4",
-//     price: "65.43$",
-//     qty: 2
-//   },
-// ];
+const products = [
+  {
+    id: 4,
+    title: "p-1",
+    price: "88.64$",
+    qty: 1,
+  },
+  {
+    id: 6,
+    title: "p-2",
+    price: "34.13$",
+    qty: 3,
+  },
+  {
+    id: 8,
+    title: "p-2",
+    price: "34.13$",
+    qty: 3,
+  },
+  {
+    id: 12,
+    title: "p-3",
+    price: "52.34$",
+    qty: 5,
+  },
+  {
+    id: 7,
+    title: "p-4",
+    price: "65.43$",
+    qty: 2,
+  },
+];
 // const totalPrice = products.reduce((acc, curr) => {
 //     return acc + Number(curr.price.split('$')[0])
 // },0)
 // console.log(totalPrice.toFixed(2))
-//! 2 
+//! 2
 // const totalPrice2 = products.reduce((acc, curr) => {
 //     const price = Number(curr.price.split('$')[0]) * curr.qty
 //     return acc + price
@@ -1090,24 +1096,70 @@ const arr = ['A', "B", "C", "D"]
 //? challenge : calc average challenge 74
 //? calc average of marks
 //! data :
-const userMarks1 = [5, 12, 18, 7, 19, 17, 8];
-// const userMarks2 = [5, 18, 12, 10, 19, 17, 8];
-// const userMarks3 = [5, 14, 18, 20, 19, 17, 8];
-//! calculate the average of marks
-const mark = userMarks1.reduce((acc, curr, i , arr) => acc + curr / arr.length, 0) 
-console.log(mark.toFixed(2))
-//! 2. calculaete  the average of passed students & 3.
-//! 3. shift marks based + 3 and recalculate the average
-const passAve = userMarks1
-    .filter(pass => pass >= 10)
-    .reduce((acc, curr, i , arr) => acc + (curr / arr.length),0)
-console.log(passAve)
-//! shiftMarks 
-const shiftAv = userMarks1
-    .map((m) => m + 3)
-    .reduce((acc, curr, i , arr) => acc + (curr / arr.length),0)
-  
-console.log(shiftAv.toFixed(2))
-//! shift marks passed
-const shiftAvPassed = userMarks1.map((m) => m+3).filter((m) => m >= 10).reduce((acc, curr, i , arr) => acc + curr / arr.length, 0 )
-console.log(shiftAvPassed)
+// const userMarks1 = [5, 12, 18, 7, 19, 17, 8];
+// // const userMarks2 = [5, 18, 12, 10, 19, 17, 8];
+// // const userMarks3 = [5, 14, 18, 20, 19, 17, 8];
+// //! calculate the average of marks
+// const mark = userMarks1.reduce((acc, curr, i , arr) => acc + curr / arr.length, 0)
+// console.log(mark.toFixed(2))
+// //! 2. calculaete  the average of passed students & 3.
+// //! 3. shift marks based + 3 and recalculate the average
+// const passAve = userMarks1
+//     .filter(pass => pass >= 10)
+//     .reduce((acc, curr, i , arr) => acc + (curr / arr.length),0)
+// console.log(passAve)
+// //! shiftMarks
+// const shiftAv = userMarks1
+//     .map((m) => m + 3)
+//     .reduce((acc, curr, i , arr) => acc + (curr / arr.length),0)
+
+// console.log(shiftAv.toFixed(2))
+// //! shift marks passed
+// const shiftAvPassed = userMarks1.map((m) => m+3).filter((m) => m >= 10).reduce((acc, curr, i , arr) => acc + curr / arr.length, 0 )
+// console.log(shiftAvPassed)
+
+//? start : 75, end :
+//? 1403/7/25
+
+//? find & findIndex method
+//! find method
+const product = products.find((product) => {
+  return product.title === "p-3";
+});
+// console.log(product)
+const filter = products.filter((item) => {
+  return item.title === "p-2";
+});
+// console.log(filter)
+
+//! findIndex method -> indexOf
+//* indexOf
+const userMark = [5, 7, 8, 10, 6, 12];
+// console.log(userMark.indexOf(10)) //! 3
+//* findIndex
+const index = products.findIndex((product) => product.title === "p-2");
+// console.log(index)
+//! challenge : remove product based on product id
+//* with filter methos
+// function deleteP(products, deleteId) {
+//   products.map((product) => {
+//     console.log(product.id !== deleteId ? product : null);
+//   });
+// }
+// console.log(deleteP(products, [4,2]));
+
+// function filterProducts(products, id) {
+//   const filterProducts = products.filter((product) => product.id !== id);
+//   return filterProducts;
+// }
+// console.log(filterProducts(products, 2));
+//* with splice & findIndex
+function filterProducts2(products,id) {
+    const cloneProducts = [...products]
+    const index = cloneProducts.findIndex(p => p.id === id)
+    console.log(products);
+    cloneProducts.splice(index, 1)
+    return cloneProducts
+}
+console.log(filterProducts2(products, 12));
+console.log(products)
