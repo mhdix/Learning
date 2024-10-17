@@ -1053,24 +1053,28 @@ const arr = ['A', "B", "C", "D"]
 const products = [
   {
     id: 4,
+    isActive: false,
     title: "p-1",
     price: "88.64$",
     qty: 1,
   },
   {
     id: 6,
+    isActive: true,
     title: "p-2",
     price: "34.13$",
     qty: 3,
   },
   {
     id: 8,
+    isActive: true,
     title: "p-2",
     price: "34.13$",
     qty: 3,
   },
   {
     id: 12,
+    isActive: true,
     title: "p-3",
     price: "52.34$",
     qty: 5,
@@ -1154,12 +1158,91 @@ const index = products.findIndex((product) => product.title === "p-2");
 // }
 // console.log(filterProducts(products, 2));
 //* with splice & findIndex
-function filterProducts2(products,id) {
-    const cloneProducts = [...products]
-    const index = cloneProducts.findIndex(p => p.id === id)
-    console.log(products);
-    cloneProducts.splice(index, 1)
-    return cloneProducts
+// function filterProducts2(products,id) {
+//     const cloneProducts = [...products]
+//     const index = cloneProducts.findIndex(p => p.id === id)
+//     console.log(products);
+//     cloneProducts.splice(index, 1)
+//     return cloneProducts
+// }
+// console.log(filterProducts2(products, 12));
+// console.log(products)
+
+//? some and every
+//* return : boolian
+//* some & find : find return OBJ OR ITEM | some return BOOLIAN
+//* includs
+// const arr2 = [1,2,3,4]
+// console.log(arr2.includes(3))
+//! some = boolian return | find = object return === first return
+// const hasActiveUser = products.some((u) => u.isActive);
+// const hasActiveUser2 = products.find((u) => u.isActive);
+// console.log(hasActiveUser)
+// console.log(hasActiveUser2);
+//! every : all index satisfy in cb condition
+// const every = products.every(p => p.isActive)
+// console.log(every)
+//! challenge : self test
+const enrolledCourses = [1 , 2];
+const cart = [
+  {
+    id: 1,
+    title: "p-1",
+    price: 78,
+  },
+  {
+    id: 2,
+    title: "p-2",
+    price: 50,
+  },
+  {
+    id: 3,
+    title: "p-3",
+    price: 100,
+  },
+  {
+    id: 4,
+    title: "p-4",
+    price: 54,
+  },
+];
+
+function checkAlreadyEnrolled(cart, courses) {
+  //* enrilled courses VS cart
+  const courseIds = cart.map((c) => c.id);
+  console.log(courseIds);
+
+  const found = courses.some((i) => courseIds.includes(i));
+  console.log(found);
 }
-console.log(filterProducts2(products, 12));
-console.log(products)
+// console.log(checkAlreadyEnrolled(cart, enrolledCourses));
+//! self
+function checkExistCourse(course, newCourse) {
+  if (course.length <= 0) return "empty";
+  console.log(course);
+  console.log(newCourse);
+
+  const coursesIds = course.map((c) => c.id);
+  console.log(coursesIds);
+
+  const found = enrolledCourses.some((id) => coursesIds.includes(id));
+  // console.log(found)
+  if (found) return "this item in your basket";
+  return "added to your basket";
+}
+console.log(checkExistCourse(cart, enrolledCourses));
+//! indexOf 
+function checkExistCourse(course, newCourse) {
+  if (course.length <= 0) return "empty";
+  console.log(course);
+  console.log(newCourse);
+
+  const coursesIds = course.map((c) => c.id);
+  console.log(coursesIds);
+
+  const found = enrolledCourses.some((id) => coursesIds.indexOf(id));
+  console.log(found)
+  if (found) return "this item in your basket";
+  return "added to your basket";
+}
+console.log(checkExistCourse(cart, enrolledCourses));
