@@ -1122,26 +1122,26 @@ const products = [
 // const shiftAvPassed = userMarks1.map((m) => m+3).filter((m) => m >= 10).reduce((acc, curr, i , arr) => acc + curr / arr.length, 0 )
 // console.log(shiftAvPassed)
 
-//? start : 75, end :
+//? start : 75, end : 77
 //? 1403/7/25
 
 //? find & findIndex method
 //! find method
-const product = products.find((product) => {
-  return product.title === "p-3";
-});
+// const product = products.find((product) => {
+//   return product.title === "p-3";
+// });
 // console.log(product)
-const filter = products.filter((item) => {
-  return item.title === "p-2";
-});
+// const filter = products.filter((item) => {
+//   return item.title === "p-2";
+// });
 // console.log(filter)
 
 //! findIndex method -> indexOf
 //* indexOf
-const userMark = [5, 7, 8, 10, 6, 12];
+// const userMark = [5, 7, 8, 10, 6, 12];
 // console.log(userMark.indexOf(10)) //! 3
 //* findIndex
-const index = products.findIndex((product) => product.title === "p-2");
+// const index = products.findIndex((product) => product.title === "p-2");
 // console.log(index)
 //! challenge : remove product based on product id
 //* with filter methos
@@ -1250,21 +1250,53 @@ const index = products.findIndex((product) => product.title === "p-2");
 
 //? sort method : mutate !!!
 //! DATA
-const number = [1 , 2 , 1000 , 4 , 8 , 3 , 21]
+// const number = [1 , 2 , 1000 , 4 , 8 , 3 , 21]
 //! ascending sort
-const ascendingsSort = number.sort((a, b) =>{
-   if (a < b) return -1
-   return +1
-})
+// const ascendingsSort = number.sort((a, b) =>{
+//    if (a < b) return -1
+//    return +1
+// })
 // console.log(ascendingsSort);
 //! decending sort
-const decendingSort  = number.sort((a, b) => {
-    if(a < b) return 1;
-    if(a > b) return -1
-})
+// const decendingSort  = number.sort((a, b) => {
+//     if(a < b) return 1;
+//     if(a > b) return -1
+// })
 // console.log(decendingSort)
 //! mini 
-const ascendingMini = number.sort((a, b) => a - b);
+// const ascendingMini = number.sort((a, b) => a - b);
 // const decendingMini = number.sort((a, b) => b - a);
-console.log(ascendingMini);
+// console.log(ascendingMini);
 // console.log(decendingMini);
+
+//? 1403/7/27
+//? Number and Math
+// //* floor
+// console.log(Math.floor(23.4));
+// //* ceil
+// console.log(Math.ceil(+"23.8"));
+// //* random
+// console.log(Math.random() * 10);
+// //* floor
+// console.log(Math.floor(Math.random() * 10));
+// //* trunc
+// console.log(Math.trunc(23.4));
+// console.log(Math.trunc(23.9));
+// //* round
+// console.log(Math.round(22.88));
+// console.log(Math.round(22.4));
+
+//! task
+// const randomNumner = (min, max) => {
+//   min = Math.ceil(min)
+//   max = Math.floor(max)
+//   return Math.floor(Math.random() * (max - min + 1) + min)
+// }
+// console.log(
+//   randomNumner(4.1 ,7.5)
+// )
+//! random decimal :
+// console.log((23).toFixed(2));
+// console.log((45.56).toFixed(1));
+// console.log((23.45).toFixed(2));
+// console.log((58.01074).toFixed(3));
