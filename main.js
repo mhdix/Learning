@@ -1270,6 +1270,7 @@ const products = [
 // console.log(decendingMini);
 
 //? 1403/7/27
+//? start : 78 ,end : 80
 //? Number and Math
 // //* floor
 // console.log(Math.floor(23.4));
@@ -1300,3 +1301,92 @@ const products = [
 // console.log((45.56).toFixed(1));
 // console.log((23.45).toFixed(2));
 // console.log((58.01074).toFixed(3));
+
+//? Date : post, product, order, coupon, OPT, ...
+// const now = new Date();
+// const date = new Date(2024, 3, 22); 
+// const stringDate = new Date("apr 2022 3 15:30:00");
+
+// console.log(now);
+// console.log(date);
+// console.log(stringDate)
+//* get seprate date
+// console.log(now.getDay()); //* 0-6
+// console.log(now.getDate()); //* 1-31
+// console.log(now.getMonth()); 
+// console.log(now.getFullYear());
+// console.log(now.toLocaleString("fa-ir"));
+// console.log(now.toLocaleDateString("fa-ir"));
+//* timeStamp
+// console.log(now.getTime()) //* timeStamp
+// console.log(Date.now()) //* timeStamp
+
+//? calculate date
+// console.log(Date.now())
+// console.log(Number(now))
+// console.log(+now)
+
+// const dateDiff = (end, start) => {
+//   const milliSec = new Date(end) - new Date(start)
+//   const days = Math.floor(milliSec / (24 * 60 * 60 * 1000));
+//   return days;
+// }
+// console.log(dateDiff('4/12/2023','4/1/2023'));
+
+//? 403/7/28
+//? start: 81, end: 
+
+//! sort by Date 
+const notes = [
+  {
+    id: 1,
+    title: "Note 1",
+    createAt: "2023-07-01T12:03:45.45458Z",
+  },
+  {
+    id: 2,
+    title: "Note 2",
+    createAt: "2021-07-10T12:03:45.45458Z",
+  },
+  {
+    id: 3,
+    title: "Note 3",
+    createAt: "2020-07-07T12:03:45.45458Z",
+  },
+];
+// //* descending
+// function sortNewest(note) {
+//   return [...note].sort((a, b) => {
+//     const noteA = new Date(a.createAt).getTime();
+//     const noteB = new Date(b.createAt).getTime();
+//     // if (noteA < noteB) return -1;
+//     // if (noteA > noteB) return 1;
+//     return noteB - noteA
+//   });
+// }
+// // console.log(sortNewest(notes));
+// //* ascending
+// function sortOldest(note) {
+//   return [...note].sort((a, b) => {
+//     const noteA = new Date(a.createAt).getTime();
+//     const noteB = new Date(b.createAt).getTime();
+//     // if (noteA < noteB) return 1;
+//     // if (noteA > noteB) return -1;
+//     return noteA - noteB // 
+//   });
+// }
+// console.log(sortOldest(notes));
+
+// //* sort by data ✅
+// function sortByDate(data, sort = "ase") {
+//   return [...data].sort((a, b) => {
+//     const noteA = new Date(a.createAt).getTime()
+//     const noteB = new Date(b.createAt).getTime()
+//     if(sort === "ase") return noteA - noteB //* oldest
+//     if(sort === "desc") return noteB - noteA //* newest
+//   })
+// }
+// //* sort oldest
+// console.log(sortByDate(notes));
+// //* sort newest
+// console.log(sortByDate(notes, 'desc'));
