@@ -1414,3 +1414,28 @@ const products = [
 // console.log(
 //   now.toLocaleDateString("fa-IR", option)
 // );
+
+//? setTimeOut and setInteval
+//! setTimeOut
+// let count = 0
+// function sayHi (name) {
+//   console.log(`Hi ${name} wellcome ! `)
+// }
+// const timerId = setTimeout(sayHi, 2000, "mahdi");
+//* clear timeOut 
+// setTimeout(() => {
+//   clearTimeout(timerId)
+//   console.log("clear timer")
+// }, 3000);
+//! setInterval
+// sayHi('first') //* start first
+// const interValId = setInterval(sayHi, 1000, 'mahdi')
+// let intervalId = setInterval(() => {
+//   if (count === 4) {
+//     clearInterval(intervalId)
+//     console.log('clear interval')
+//   }else {
+//     count ++
+//     console.log(count)
+//   }
+// }, 1000);
