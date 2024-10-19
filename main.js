@@ -1439,3 +1439,23 @@ const products = [
 //     console.log(count)
 //   }
 // }, 1000);
+
+//? count Doun 
+//! task craeate count down timer
+function countDown(time) {
+  const timer = () => {
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const sec = String(Math.trunc(time % 60)).padStart(2, 0);
+    if (time === 0) {
+      clearInterval(interValId);
+      console.log("please re-send code");
+    }
+    console.log(`${min}:${sec}`);
+    time--;
+
+  }
+  timer()
+  const interValId = setInterval(timer, 1000)
+}
+
+console.log(countDown(120))
