@@ -1337,23 +1337,23 @@ const products = [
 //? start: 81, end: 
 
 //! sort by Date 
-const notes = [
-  {
-    id: 1,
-    title: "Note 1",
-    createAt: "2023-07-01T12:03:45.45458Z",
-  },
-  {
-    id: 2,
-    title: "Note 2",
-    createAt: "2021-07-10T12:03:45.45458Z",
-  },
-  {
-    id: 3,
-    title: "Note 3",
-    createAt: "2020-07-07T12:03:45.45458Z",
-  },
-];
+// const notes = [
+//   { 
+//     id: 1,
+//     title: "Note 1",
+//     createAt: "2023-07-01T12:03:45.45458Z",
+//   },
+//   {
+//     id: 2,
+//     title: "Note 2",
+//     createAt: "2021-07-10T12:03:45.45458Z",
+//   },
+//   {
+//     id: 3,
+//     title: "Note 3",
+//     createAt: "2020-07-07T12:03:45.45458Z",
+//   },
+// ];
 // //* descending
 // function sortNewest(note) {
 //   return [...note].sort((a, b) => {
@@ -1390,3 +1390,27 @@ const notes = [
 // console.log(sortByDate(notes));
 // //* sort newest
 // console.log(sortByDate(notes, 'desc'));
+
+
+// //? local date
+// //* data
+// const now = new Date() 
+// //* 1
+// console.log(
+//   now.toLocaleDateString("fa-IR", {
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric",
+//     weekday: "long",
+//   })
+// );
+// //* 2
+// const option = {
+//   year: "numeric",
+//   month: "long",
+//   day: "numeric",
+//   weekday: "long",
+// };
+// console.log(
+//   now.toLocaleDateString("fa-IR", option)
+// );
