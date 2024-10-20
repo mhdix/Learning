@@ -1503,7 +1503,7 @@ courseNameTag.classList.add('course-title')
 // console.log(courseNameTag)
 const parent = document.querySelector('.dom')
 parent.append(courseNameTag)
-//! add Element to DOM 3
+//! add Element to DOM 3 (self)
 const div = document.createElement('div')
 div.classList.add('parent-courses')
 document.body.prepend(div)
@@ -1515,3 +1515,11 @@ div.append(p)
 const btn = document.createElement('button')
 btn.textContent = 'click'
 div.append(btn)
+//! add Element to DOM 3 (video)
+const seeMore = document.createElement('div')
+seeMore.innerHTML = `
+        <br />
+        <h2>First Tag DOM</h2>
+        <button>click DOM</button>
+`;
+document.querySelector("body").append(seeMore);
