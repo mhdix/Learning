@@ -1458,19 +1458,60 @@ const products = [
 // }
 // console.log(countDown(120))
 //! test timer 
-function countDown(number) {
-  const timer = () =>{
-    const min = String(Math.trunc(number / 60)).padStart(2, 0);
-    const sec = String(Math.trunc(number % 60)).padStart(2, 0)
-    console.log(`${min}:${sec}`)
-    if(number === 0 ){
-      clearInterval(interValId)  
-      console.log('interval clear')
-    }
-    number -- 
-  }
-    timer()
-  const interValId = setInterval(timer, 1000)
-  // return timer
-}
-countDown(2)
+// function countDown(number) {
+//   const timer = () =>{
+//     const min = String(Math.trunc(number / 60)).padStart(2, 0);
+//     const sec = String(Math.trunc(number % 60)).padStart(2, 0)
+//     console.log(`${min}:${sec}`)
+//     if(number === 0 ){
+//       clearInterval(interValId)  
+//       console.log('interval clear')
+//     }
+//     number -- 
+//   }
+//     timer()
+//   const interValId = setInterval(timer, 1000)
+//   // return timer
+// }
+// countDown(2)
+
+//? 403/7/28
+//? start: 85, end: 
+
+//? what is DOM
+// const tag = document.querySelector('.course')
+// console.log(tag.textContent)
+// const tagId = document.querySelector("#course1")
+// console.log(tagId.textContent)
+//* get all textcontent
+// const course = document.querySelectorAll('.course')
+// course.forEach(element => {
+//   console.log(element.tex tContent)
+// });
+
+//? add element to DOM
+const newCourse = document.createElement('p');
+newCourse.textContent = 'JavaScript Course DOM'
+newCourse.classList.add('course-title')
+document.querySelector('.dom').append(newCourse)
+//! add Element to DOM 2 
+const parentCourses = document.createElement('div')
+parentCourses.classList.add("courses")
+const courseNameTag = document.createElement('p') 
+courseNameTag.textContent = 'React Course DOM'
+courseNameTag.classList.add('course-title')
+// console.log(courseNameTag)
+const parent = document.querySelector('.dom')
+parent.append(courseNameTag)
+//! add Element to DOM 3
+const div = document.createElement('div')
+div.classList.add('parent-courses')
+document.body.prepend(div)
+
+const p = document.createElement('p')
+p.textContent = 'Firast Course On DOM '
+div.append(p)
+
+const btn = document.createElement('button')
+btn.textContent = 'click'
+div.append(btn)
