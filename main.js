@@ -1334,7 +1334,7 @@ const products = [
 // console.log(dateDiff('4/12/2023','4/1/2023'));
 
 //? 403/7/28
-//? start: 81, end: 
+//? start: 81, end: 84
 
 //! sort by Date 
 // const notes = [
@@ -1442,20 +1442,35 @@ const products = [
 
 //? count Doun 
 //! task craeate count down timer
-function countDown(time) {
-  const timer = () => {
-    const min = String(Math.trunc(time / 60)).padStart(2, 0);
-    const sec = String(Math.trunc(time % 60)).padStart(2, 0);
-    if (time === 0) {
-      clearInterval(interValId);
-      console.log("please re-send code");
+// function countDown(time) {
+//   const timer = () => {
+//     const min = String(Math.trunc(time / 60)).padStart(2, 0);
+//     const sec = String(Math.trunc(time % 60)).padStart(2, 0);
+//     if (time === 0) {
+//       clearInterval(interValId);
+//       console.log("please re-send code");
+//     }
+//     console.log(`${min}:${sec}`);
+//     time--;
+//   }
+//   timer()
+//   const interValId = setInterval(timer, 1000)
+// }
+// console.log(countDown(120))
+//! test timer 
+function countDown(number) {
+  const timer = () =>{
+    const min = String(Math.trunc(number / 60)).padStart(2, 0);
+    const sec = String(Math.trunc(number % 60)).padStart(2, 0)
+    console.log(`${min}:${sec}`)
+    if(number === 0 ){
+      clearInterval(interValId)  
+      console.log('interval clear')
     }
-    console.log(`${min}:${sec}`);
-    time--;
-
+    number -- 
   }
-  timer()
+    timer()
   const interValId = setInterval(timer, 1000)
+  // return timer
 }
-
-console.log(countDown(120))
+countDown(2)
