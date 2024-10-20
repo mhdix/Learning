@@ -1539,22 +1539,41 @@ const products = [
 //   p.remove();
 // });
 //! task 87 : create close modal
-const div = document.createElement('div')
-document.querySelector("body").prepend(div);
-div.innerHTML = `
-  <h2 class="dom title">Courses</h2>
-  <h2 class="dom desc">React</h2>
-  <button class="dom btn">close</button>
-  <br />
-  <br />
-  <br />
-  <br />
-`;
-const classElement = document.querySelectorAll('.dom')
+// const div = document.createElement('div')
+// document.querySelector("body").prepend(div);
+// div.innerHTML = `
+//   <h2 class="dom title">Courses</h2>
+//   <h2 class="dom desc">React</h2>
+//   <button class="dom btn">close</button>
+//   <br />
+//   <br />
+//   <br />
+//   <br />
+// `;
+// const classElement = document.querySelectorAll('.dom')
 
-const closeBtn = document.querySelector('.btn')
-closeBtn.addEventListener('click', () => {
-  classElement.forEach(element => {
-    element.remove()
-  });
+// const closeBtn = document.querySelector('.btn')
+// closeBtn.addEventListener('click', () => {
+//   classElement.forEach(element => {
+//     element.remove()
+//   });
+// })
+
+//? input and change event 
+//! copy event
+const search = document.querySelector("#search-input");
+search.addEventListener('copy', (e) => {
+  console.log(`${e.type} : ${document.getSelection()}`)
+})
+//! pase event
+const paste = document.querySelector('#search-input')
+paste.addEventListener('paste', (e) => {
+  console.log(`${e.type} : ${e.clipboardData.getData('text/plain')}`)
+})
+
+
+//! change event
+const input = document.querySelector('#search-input')
+input.addEventListener('input', (e) => {
+  console.log(e.target.value)
 })
