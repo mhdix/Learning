@@ -1489,37 +1489,72 @@ const products = [
 //   console.log(element.tex tContent)
 // });
 
-//? add element to DOM
-const newCourse = document.createElement('p');
-newCourse.textContent = 'JavaScript Course DOM'
-newCourse.classList.add('course-title')
-document.querySelector('.dom').append(newCourse)
-//! add Element to DOM 2 
-const parentCourses = document.createElement('div')
-parentCourses.classList.add("courses")
-const courseNameTag = document.createElement('p') 
-courseNameTag.textContent = 'React Course DOM'
-courseNameTag.classList.add('course-title')
-// console.log(courseNameTag)
-const parent = document.querySelector('.dom')
-parent.append(courseNameTag)
-//! add Element to DOM 3 (self)
+// //? add element to DOM
+// const newCourse = document.createElement('p');
+// newCourse.textContent = 'JavaScript Course DOM'
+// newCourse.classList.add('course-title')
+// document.querySelector('.dom').append(newCourse)
+// //! add Element to DOM 2 
+// const parentCourses = document.createElement('div')
+// parentCourses.classList.add("courses")
+// const courseNameTag = document.createElement('p') 
+// courseNameTag.textContent = 'React Course DOM'
+// courseNameTag.classList.add('course-title')
+// // console.log(courseNameTag)
+// const parent = document.querySelector('.dom')
+// parent.append(courseNameTag)
+// //! add Element to DOM 3 (self)
+// const div = document.createElement('div')
+// div.classList.add('parent-courses')
+// document.body.prepend(div)
+
+// const p = document.createElement('p')
+// p.textContent = 'Firast Course On DOM '
+// div.append(p)
+
+// const btn = document.createElement('button')
+// btn.textContent = 'click'
+// div.append(btn)
+// //! add Element to DOM 3 (video)
+// const seeMore = document.createElement('div')
+// seeMore.classList.add("first-dom-div");
+// seeMore.innerHTML = `
+//         <br />
+//         <h2 class="first-dom-element">First Tag DOM</h2>
+//         <h2 class="first-dom-element">First Tag DOM</h2>
+//         <h2 class="first-dom-element">First Tag DOM</h2>
+//         <h2 class="first-dom-element">First Tag DOM</h2>
+//         <button class="first-dom-btn">click DOM</button>
+// `;
+// document.querySelector("body").append(seeMore);
+
+// //? Remove and Update Element
+// //! Update
+// document.querySelector(".first-dom-element").textContent = "پرفکت کد";
+// //! Remove
+// document.querySelector(".first-dom-btn").remove();
+// //! delete all p tag
+// const allP = document.querySelectorAll(".first-dom-element");
+// allP.forEach((p) => {
+//   p.remove();
+// });
+//! task 87 : create close modal
 const div = document.createElement('div')
-div.classList.add('parent-courses')
-document.body.prepend(div)
-
-const p = document.createElement('p')
-p.textContent = 'Firast Course On DOM '
-div.append(p)
-
-const btn = document.createElement('button')
-btn.textContent = 'click'
-div.append(btn)
-//! add Element to DOM 3 (video)
-const seeMore = document.createElement('div')
-seeMore.innerHTML = `
-        <br />
-        <h2>First Tag DOM</h2>
-        <button>click DOM</button>
+document.querySelector("body").prepend(div);
+div.innerHTML = `
+  <h2 class="dom title">Courses</h2>
+  <h2 class="dom desc">React</h2>
+  <button class="dom btn">close</button>
+  <br />
+  <br />
+  <br />
+  <br />
 `;
-document.querySelector("body").append(seeMore);
+const classElement = document.querySelectorAll('.dom')
+
+const closeBtn = document.querySelector('.btn')
+closeBtn.addEventListener('click', () => {
+  classElement.forEach(element => {
+    element.remove()
+  });
+})
