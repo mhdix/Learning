@@ -1583,51 +1583,53 @@ const arr = ['A', "B", "C", "D"]
 
 //? challenge: search products 
 
-const courses = [
-  {
-    id: 1,
-    title: "React.js",
-  },
-  {
-    id: 2,
-    title: "Html",
-  },
-  {
-    id: 3,
-    title: "Next.js",
-  },
-  {
-    id: 4,
-    title: "php",
-  },
-];
+// const courses = [
+//   {
+//     id: 1,
+//     title: "React.js",
+//   },
+//   {
+//     id: 2,
+//     title: "Html",
+//   },
+//   {
+//     id: 3,
+//     title: "Next.js",
+//   },
+//   {
+//     id: 4,
+//     title: "php",
+//   },
+// ];
 
-const filters = {
-  title: '',
-}
-const searchInput = document.querySelector('#search-input')
-const div = document.querySelector('.courses')
+// const filters = {
+//   title: '',
+// }
+// const searchInput = document.querySelector('#search-input')
+// const div = document.querySelector('.courses')
 
-searchInput.addEventListener('input' , (e) => {
-  filters.title = e.target.value
-  // 1. filter
-  // 2. add products to DOM
-  renderProducts(courses, filters)
-})
+// searchInput.addEventListener('input' , (e) => {
+//   filters.title = e.target.value
+//   // 1. filter
+//   // 2. add products to DOM
+//   renderProducts(courses, filters)
+// })
 
-function renderProducts (_products, _filters) {
-  const filteredProducts = _products.filter(product =>{
-    return product.title.toLowerCase().includes(_filters.title.toLowerCase().trim())
-  })
+// function renderProducts (_products, _filters) {
+//   const filteredProducts = _products.filter(product =>{
+//     return product.title.toLowerCase().includes(_filters.title.toLowerCase().trim())
+//   })
   
-  div.innerHTML = ""
-  filteredProducts.forEach(item => {
-    const p = document.createElement("p");
-    p.classList.add("course-title");
-    p.textContent = item.title
-    div.append(p)
-  });
-}
-renderProducts(courses, filters)
+//   div.innerHTML = ""
+//   filteredProducts.forEach(item => {
+//     const p = document.createElement("p");
+//     p.classList.add("course-title");
+//     p.textContent = item.title
+//     div.append(p)
+//   });
+// }
+// renderProducts(courses, filters)
 
-
+//? mini-project DOM 90
+//* folder mini project 90
+//!
