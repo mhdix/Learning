@@ -1050,42 +1050,42 @@ const arr = ['A', "B", "C", "D"]
 // },0)
 // console.log(totalScore)
 //! task 2 => reduce in price 
-const products = [
-  {
-    id: 4,
-    isActive: false,
-    title: "p-1",
-    price: "88.64$",
-    qty: 1,
-  },
-  {
-    id: 6,
-    isActive: true,
-    title: "p-2",
-    price: "34.13$",
-    qty: 3,
-  },
-  {
-    id: 8,
-    isActive: true,
-    title: "p-2",
-    price: "34.13$",
-    qty: 3,
-  },
-  {
-    id: 12,
-    isActive: true,
-    title: "p-3",
-    price: "52.34$",
-    qty: 5,
-  },
-  {
-    id: 7,
-    title: "p-4",
-    price: "65.43$",
-    qty: 2,
-  },
-];
+// const products = [
+//   {
+//     id: 4,
+//     isActive: false,
+//     title: "p-1",
+//     price: "88.64$",
+//     qty: 1,
+//   },
+//   {
+//     id: 6,
+//     isActive: true,
+//     title: "p-2",
+//     price: "34.13$",
+//     qty: 3,
+//   },
+//   {
+//     id: 8,
+//     isActive: true,
+//     title: "p-2",
+//     price: "34.13$",
+//     qty: 3,
+//   },
+//   {
+//     id: 12,
+//     isActive: true,
+//     title: "p-3",
+//     price: "52.34$",
+//     qty: 5,
+//   },
+//   {
+//     id: 7,
+//     title: "p-4",
+//     price: "65.43$",
+//     qty: 2,
+//   },
+// ];
 // const totalPrice = products.reduce((acc, curr) => {
 //     return acc + Number(curr.price.split('$')[0])
 // },0)
@@ -1476,7 +1476,7 @@ const products = [
 // countDown(2)
 
 //? 403/7/28
-//? start: 85, end: 
+//? start: 85, end: 88
 
 //? what is DOM
 // const tag = document.querySelector('.course')
@@ -1559,21 +1559,75 @@ const products = [
 //   });
 // })
 
-//? input and change event 
-//! copy event
-const search = document.querySelector("#search-input");
-search.addEventListener('copy', (e) => {
-  console.log(`${e.type} : ${document.getSelection()}`)
-})
-//! pase event
-const paste = document.querySelector('#search-input')
-paste.addEventListener('paste', (e) => {
-  console.log(`${e.type} : ${e.clipboardData.getData('text/plain')}`)
-})
+// //? input and change event 
+// //! copy event
+// const search = document.querySelector("#search-input");
+// search.addEventListener('copy', (e) => {
+//   console.log(`${e.type} : ${document.getSelection()}`)
+// })
+// //! pase event
+// const paste = document.querySelector('#search-input')
+// paste.addEventListener('paste', (e) => {
+//   console.log(`${e.type} : ${e.clipboardData.getData('text/plain')}`)
+// })
 
 
-//! change event
-const input = document.querySelector('#search-input')
-input.addEventListener('input', (e) => {
-  console.log(e.target.value)
+// //! change event
+// const input = document.querySelector('#search-input')
+// input.addEventListener('input', (e) => {
+//   console.log(e.target.value)
+// })
+
+//? 403/7/29
+//? start: 89, end: 
+
+//? challenge: search products 
+
+const courses = [
+  {
+    id: 1,
+    title: "React.js",
+  },
+  {
+    id: 2,
+    title: "Html",
+  },
+  {
+    id: 3,
+    title: "Next.js",
+  },
+  {
+    id: 4,
+    title: "php",
+  },
+];
+
+const filters = {
+  title: '',
+}
+const searchInput = document.querySelector('#search-input')
+const div = document.querySelector('.courses')
+
+searchInput.addEventListener('input' , (e) => {
+  filters.title = e.target.value
+  // 1. filter
+  // 2. add products to DOM
+  renderProducts(courses, filters)
 })
+
+function renderProducts (_products, _filters) {
+  const filteredProducts = _products.filter(product =>{
+    return product.title.toLowerCase().includes(_filters.title.toLowerCase().trim())
+  })
+  
+  div.innerHTML = ""
+  filteredProducts.forEach(item => {
+    const p = document.createElement("p");
+    p.classList.add("course-title");
+    p.textContent = item.title
+    div.append(p)
+  });
+}
+renderProducts(courses, filters)
+
+
