@@ -84,15 +84,30 @@ const number = document.querySelector(".number");
 // });
 
 //! self test
-const btn = document.querySelectorAll(".btn");
-let counter = Number(number.textContent);
+// const btn = document.querySelectorAll(".btn");
+// let counter = Number(number.textContent);
 
-btn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    // console.log(btn.classList)
-    if (btn.classList.contains("plus")) counter++;
-    else if (btn.classList.contains("min")) counter--;
-    if (btn.classList.contains("reset")) counter = 0;
-    number.textContent = counter;
-  });
-});
+// btn.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     // console.log(btn.classList)
+//     if (btn.classList.contains("plus")) counter++;
+//     else if (btn.classList.contains("min")) counter--;
+//     if (btn.classList.contains("reset")) counter = 0;
+//     number.textContent = counter;
+//   });
+// });
+
+//? 403/7/31
+//? start: 91, End:
+//? modal mini project : self
+const showModalBtn = document.querySelector('.show-modal')
+const modal = document.querySelector('.modal')
+
+showModalBtn.addEventListener('click', toggleShow)
+function toggleShow () {
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove("hidden");
+    }else {
+        modal.classList.add("hidden");
+    }
+}
