@@ -1,4 +1,6 @@
 //? 93
+
+// selecting
 const todoInput = document.querySelector(".todo-input");
 const submitBtn = document.querySelector(".todo-button");
 const formTodo = document.querySelector(".todo-form");
@@ -6,11 +8,12 @@ const formTodo = document.querySelector(".todo-form");
 const todoList = document.querySelector(".todoList");
 const selectFilter = document.querySelector(".filter-todos");
 
+const removeBtn = document.querySelectorAll('.todo__remove')
 // event
 formTodo.addEventListener("submit", addTodo);
 selectFilter.addEventListener("change", filterTodos);
 
-const todos = [];
+let todos = [];
 function addTodo(e) {
   e.preventDefault();
   const newTodo = {
@@ -23,6 +26,8 @@ function addTodo(e) {
 
   // create todo on DOM
   createTodos(todos);
+  function endTodo(todo) {
+  }
 
   // filter todo 
   // filterTodos(todos)
@@ -38,18 +43,24 @@ function createTodos(todos) {
                 <span class="todo__createdAt">${new Date(
                   todo.createdAt
                 ).toLocaleDateString("fa-IR")}</span>
-                <button data-todo-id=${
+                <button class="todo__check" data-todo-id=${
                   todo.id
-                }><i class="todo__check far fa-check-square"></i></button>
-                <button data-todo-id=${
+                }><i class="far fa-check-square"></i></button>
+                <button class="todo__remove" data-todo-id=${
                   todo.id
-                }><i class="todo__remove far fa-trash-alt"></i></button>
+                }><i class="far fa-trash-alt"></i></button>
             </li>
   `;
 });
 
   todoList.innerHTML = result;
   todoInput.value = "";
+
+  const removeBtn = [...document.querySelectorAll('.todo__remove')]
+  removeBtn.forEach((btn) => {
+    btn.addEventListener('click', removeTodo)
+  })
+
 }
 
 //! filter todos
@@ -78,4 +89,11 @@ function filterTodos(e) {
       break;
     }
   }
+}
+
+//! remove todo
+function removeTodo(e) {
+  const todoId = Number(e.target.dataset.todoId)
+   todos = todos.filter((todo) => todo.id !== todoId);
+   createTodos(todos)
 }
