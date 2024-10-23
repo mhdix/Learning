@@ -1630,6 +1630,6 @@ const arr = ['A', "B", "C", "D"]
 // }
 // renderProducts(courses, filters)
 
-//? mini-project DOM 90
+//? mini-project DOM 90 - 96
 //* folder mini project 90
 //!

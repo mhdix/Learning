@@ -13,6 +13,7 @@ const removeBtn = document.querySelectorAll('.todo__remove')
 formTodo.addEventListener("submit", addTodo);
 selectFilter.addEventListener("change", filterTodos);
 
+
 let todos = [];
 function addTodo(e) {
   e.preventDefault();
@@ -26,11 +27,6 @@ function addTodo(e) {
 
   // create todo on DOM
   createTodos(todos);
-  function endTodo(todo) {
-  }
-
-  // filter todo 
-  // filterTodos(todos)
 }
 
 //! create todos
@@ -38,8 +34,8 @@ function createTodos(todos) {
   let result = "";
   todos.forEach((todo) => {
     result += `
-            <li class="todo">
-                <p class="todo__title">${todo.title}</p>
+            <li class="todo ${todo.isCompleted && "completed"}">
+                <p class="todo__title ">${todo.title}</p>
                 <span class="todo__createdAt">${new Date(
                   todo.createdAt
                 ).toLocaleDateString("fa-IR")}</span>
@@ -51,16 +47,19 @@ function createTodos(todos) {
                 }><i class="far fa-trash-alt"></i></button>
             </li>
   `;
-});
+  });
 
   todoList.innerHTML = result;
   todoInput.value = "";
 
-  const removeBtn = [...document.querySelectorAll('.todo__remove')]
+  const removeBtn = [...document.querySelectorAll(".todo__remove")];
   removeBtn.forEach((btn) => {
-    btn.addEventListener('click', removeTodo)
-  })
+    btn.addEventListener("click", removeTodo);
+  });
 
+  // check todo
+  const checkBtn = [...document.querySelectorAll(".todo__check")];
+  checkBtn.forEach((todo) => todo.addEventListener("click", checkTodo));
 }
 
 //! filter todos
@@ -68,24 +67,24 @@ function filterTodos(e) {
   // console.log(e.target.value)
   // console.log(e.target.value)
   const filter = e.target.value;
-  console.log(filter)
+  console.log(filter);
   switch (filter) {
     case "all": {
       createTodos(todos);
       break;
     }
     case "completed": {
-        const filteredTodos = todos.filter((todo) => {
-        return todo.isCompleted
+      const filteredTodos = todos.filter((todo) => {
+        return todo.isCompleted;
       });
       createTodos(filteredTodos);
       break;
     }
     case "uncompleted": {
       const filteredTodos = todos.filter((todo) => {
-       return !todo.isCompleted
-      })
-      createTodos(filteredTodos)
+        return !todo.isCompleted;
+      });
+      createTodos(filteredTodos);
       break;
     }
   }
@@ -93,7 +92,16 @@ function filterTodos(e) {
 
 //! remove todo
 function removeTodo(e) {
-  const todoId = Number(e.target.dataset.todoId)
-   todos = todos.filter((todo) => todo.id !== todoId);
-   createTodos(todos)
+  const todoId = Number(e.target.dataset.todoId);
+  todos = todos.filter((todo) => todo.id !== todoId);
+  createTodos(todos);
+}
+
+//! check todo
+function checkTodo(e) {
+  const todoId = Number(e.target.dataset.todoId);
+  const todo = todos.find((t) => t.id === todoId);
+  todo.isCompleted = !todo.isCompleted
+  console.log(todos)
+  createTodos(todos)
 }
