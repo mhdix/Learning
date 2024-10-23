@@ -1,5 +1,9 @@
 //? 93
 
+
+let todos = [];
+let filterValue = "all";
+
 // selecting
 const todoInput = document.querySelector(".todo-input");
 const submitBtn = document.querySelector(".todo-button");
@@ -11,10 +15,13 @@ const selectFilter = document.querySelector(".filter-todos");
 const removeBtn = document.querySelectorAll('.todo__remove')
 // event
 formTodo.addEventListener("submit", addTodo);
-selectFilter.addEventListener("change", filterTodos);
+selectFilter.addEventListener("change", (e) => {
+  filterValue = e.target.value
+  filterTodos()
+});
 
 
-let todos = [];
+
 function addTodo(e) {
   e.preventDefault();
   const newTodo = {
@@ -26,7 +33,7 @@ function addTodo(e) {
   todos.push(newTodo);
 
   // create todo on DOM
-  createTodos(todos);
+  filterTodos();
 }
 
 //! create todos
@@ -63,30 +70,24 @@ function createTodos(todos) {
 }
 
 //! filter todos
-function filterTodos(e) {
-  // console.log(e.target.value)
-  // console.log(e.target.value)
-  const filter = e.target.value;
-  console.log(filter);
-  switch (filter) {
+function filterTodos() {
+  switch (filterValue) {
     case "all": {
       createTodos(todos);
       break;
     }
     case "completed": {
-      const filteredTodos = todos.filter((todo) => {
-        return todo.isCompleted;
-      });
+      const filteredTodos = todos.filter((todo) => todo.isCompleted);
       createTodos(filteredTodos);
       break;
     }
     case "uncompleted": {
-      const filteredTodos = todos.filter((todo) => {
-        return !todo.isCompleted;
-      });
+      const filteredTodos = todos.filter((todo) => !todo.isCompleted);
       createTodos(filteredTodos);
       break;
     }
+    default:
+      createTodos(todos)
   }
 }
 
@@ -94,14 +95,15 @@ function filterTodos(e) {
 function removeTodo(e) {
   const todoId = Number(e.target.dataset.todoId);
   todos = todos.filter((todo) => todo.id !== todoId);
-  createTodos(todos);
+  filterTodos();
 }
 
+//? 403/8/2
+//? start: 97, end: 
 //! check todo
 function checkTodo(e) {
   const todoId = Number(e.target.dataset.todoId);
   const todo = todos.find((t) => t.id === todoId);
   todo.isCompleted = !todo.isCompleted
-  console.log(todos)
-  createTodos(todos)
+  filterTodos()
 }
